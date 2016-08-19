@@ -8,6 +8,7 @@ var UIEngine = {
     windowObj: $(window),
     siteContainer: $('.site_container'),
     menuButton: $('.site_container-menu-button'),
+    menuItems: $('.site_container-menu ul a'),
     siteContent: $('.site_container-pusher')
   },
   eventtype: null,
@@ -22,17 +23,16 @@ var UIEngine = {
         UIEngine._elements.siteContainer.addClass('site_container-menu__is-open');
       }, 25 );
       UIEngine._elements.siteContent.one('touchstart click', function() {
-        UIEngine._bodyClicked();
+        UIEngine._closeNav();
+      });
+      UIEngine._elements.menuItems.one('touchstart click', function() {
+        //load content
+        UIEngine._closeNav();
       });
     });
   },
   _closeNav: function() {
     this._elements.siteContainer.removeClass('site_container-menu__is-open');
-  },
-  _bodyClicked: function() {
-    if(this._elements.siteContainer.hasClass('site_menu-effect-9')){
-      this._closeNav();
-    }
   },
 
   // public functions and methods
