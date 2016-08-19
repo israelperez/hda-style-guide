@@ -1,0 +1,26 @@
+// if selecting a pagination button changes the url then use the anchor element
+// if the url remains unchanged use the button element
+
+.hda-pagination{
+	&-item{
+		@extend .hda-button;
+		@extend .hda-button__is-anchor; // only when using anchor elements
+		padding: 8px 0;
+		width: 35px;
+		text-align: center;
+		&__is-prev,
+		&__is-next{
+			@extend .hda-button;
+			@extend .hda-button__is-anchor; // only when using anchor elements
+		}
+		&__is-btn{
+			@extend .hda-button;
+			padding: 8px 0;
+			width: 35px;
+			&-prev,
+			&-next{
+				@extend .hda-button;
+			}
+		}
+	}
+}

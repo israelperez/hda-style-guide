@@ -1,0 +1,48 @@
+.hda-accord{
+	&_item{
+		&[aria-expanded="false"]{
+			.hda-accord_item-header-btn__is-expanded,
+			.hda-accord_item-body{
+				display: none;
+			}
+			.hda-accord_item-header-btn__is-closed{
+				display: block;
+			}
+		}
+		&[aria-expanded="true"]{
+			.hda-accord_item-header-btn__is-expanded,
+			.hda-accord_item-body{
+				display: block;
+			}
+			.hda-accord_item-header-btn__is-closed{
+				display: none;
+			}
+		}
+		&-header{
+			&-btn{
+				position: relative;
+				padding-right: $general-spacing * 2;
+				cursor: pointer;
+				&__is-expanded,
+				&__is-closed{
+					position: absolute;
+					top: 50%;
+					right: 0;
+					margin-top: -1rem;
+					display: block;
+					height: 2rem;
+					width: 2rem;
+					font-size: 1rem;
+					line-height: 2rem;
+					text-align: center;
+				}
+				&__is-expanded{
+					@extend .hda-icon_caret-down;
+				}
+				&__is-closed{
+					@extend .hda-icon_caret-right;
+				}
+			}
+		}
+	}
+}

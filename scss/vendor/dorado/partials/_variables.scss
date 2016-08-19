@@ -1,0 +1,118 @@
+//			Variables
+//*********************************/
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+$enable-flex:               false !default; // used in grid
+// $enable-rounded:            true !default;
+// $enable-shadows:            false !default;
+// $enable-gradients:          false !default;
+// $enable-transitions:        false !default;
+$enable-hover-media-query:  false !default; // used in reboot
+$enable-grid-classes:       true !default; // used in grid
+
+// Media queries, Grid
+// used in grid
+$breakpoints: (
+	mobile: 0,
+	tablet: 760px,
+	desktop: 1030px,
+	desktoplarge: 1200px,
+	desktopxlarge: 1800px
+) !default;
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+// used in grid
+$container-max-widths: (
+  tablet: 1050px,
+  desktop: 1050px,
+  desktoplarge: 1050px,
+  desktopxlarge: 1050px
+) !default;
+
+// Grid Set the number of columns and specify the width of the gutters.
+$grid-columns:      12 !default; // used in grid
+$grid-gutter-width: 1.875rem !default; // used in grid
+//
+// $top-nav: 37px;
+// $col-a: 63%;
+// $col-b: 37%;
+
+// Material design
+$paper-depth1: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+$paper-depth2: 0 3px 10px rgba(0, 0, 0, 0.16), 0 3px 10px rgba(0, 0, 0, 0.23);
+$paper-depth3: 0 10px 30px rgba(0, 0, 0, 0.19), 0 6px 10px rgba(0, 0, 0, 0.23);
+
+$paper-depth1-inset: 0 1px 6px rgba(0, 0, 0, 0.12) inset, 0 1px 4px rgba(0, 0, 0, 0.24) inset;
+$paper-depth2-inset: 0 3px 10px rgba(0, 0, 0, 0.16) inset, 0 3px 10px rgba(0, 0, 0, 0.23) inset;
+$paper-depth3-inset: 0 10px 30px rgba(0, 0, 0, 0.19) inset, 0 6px 10px rgba(0, 0, 0, 0.23) inset;
+
+// Z-index master list
+//
+// Warning: Avoid customizing these values. They're used for a bird's eye view
+// of components dependent on the z-axis and are designed to all work together.
+//$zindex-dropdown-backdrop:  990 !default;
+$zindex-navbar:				1000 !default;
+$zindex-dropdown:			1000 !default;
+$zindex-navbar-fixed:		1030 !default;
+$zindex-popover:			1060 !default;
+//$zindex-tooltip:           1070 !default;
+//$zindex-navbar-sticky:     1030 !default;
+$zindex-modal-bg:			1040 !default;
+$zindex-modal:				1050 !default;
+$z-index-throbber:			1100 !default;
+
+// Spacing
+//
+// Control the default styling of most elements by modifying these
+// variables. Mostly focused on spacing.
+
+$border-width: 1px !default;
+// $spacer:   1rem !default;
+// $spacer-x: $spacer !default;
+// $spacer-y: $spacer !default;
+// $spacers: (
+//   0: (
+//     x: 0,
+//     y: 0
+//   ),
+//   1: (
+//     x: $spacer-x,
+//     y: $spacer-y
+//   ),
+//   2: (
+//     x: ($spacer-x * 1.5),
+//     y: ($spacer-y * 1.5)
+//   ),
+//   3: (
+//     x: ($spacer-x * 3),
+//     y: ($spacer-y * 3)
+//   )
+// ) !default;
+
+
+
+// Element options
+//
+// general
+$general-spacing:				20px !default; // used in reboot
+// tables
+$table-cell-padding:            .75rem !default;
+// animation timing
+$animation-small-time:			0.5s !default;
+$animation-medium-time:			0.7s !default;
+$animation-large-time:			1s !default;
+// icons
+$icon-prefix:					"hda-icon";
+//drop downs
+$dropdown-border-width:			$border-width !default;
+
+
+// Content team variables
+//
+// variabels used to set content displayed from CMS
+$small-col-width: 	280px;
+$large-col-width:	$small-col-width + 20px;

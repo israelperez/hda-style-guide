@@ -1,0 +1,19 @@
+.main{
+	&_hero-images{
+		@extend .print-hidden;
+		position: relative;
+		z-index: 2;
+		@extend .grid-container;
+		margin-bottom: $general-spacing * 2;
+		padding: 0;
+		img{
+			width: 100%;
+			max-width: 1050px;
+		}
+	}
+}
+@include media-breakpoint-up(desktop) {
+	.main-content-hero-images{
+		margin-bottom: $general-spacing * 2;
+	}
+}

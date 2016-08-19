@@ -1,0 +1,19 @@
+.brightcove-video-js{
+	@extend .print-hidden;
+	height: auto;
+	height: initial;
+	width: auto;
+	width: initial;
+	video{
+		position: static !important;
+		width: 100% !important;
+		height: auto !important;
+		height: initial !important;
+	}
+}
+.vjs-big-play-button{
+	top: 50% !important;
+	left: 50% !important;
+	margin-top: -57px !important;
+	margin-left: -78px !important;
+}

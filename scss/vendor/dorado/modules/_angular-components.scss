@@ -1,0 +1,94 @@
+.widget{
+	&-hsf{
+		&_content{
+			&-error{
+				@extend .error_section;
+			}
+			&-col{
+				column-count: 1;
+				column-width: 220px;
+				column-gap: 0;
+				.radio-btn-group{
+					width: 100%;
+				}
+				&-start{
+					&-location{
+						@extend .hda-text-input_group;
+						@extend .hda-text-input_group-text-field;
+						&-spinner{
+							@extend .hda-text-input_group-icon__back;
+							@extend .hda-icon_spinner;
+							@extend .hda-icon__is-spin;
+							color: $brand-primary;
+							width: 1em;
+							height: 1em;
+							top: 13px;
+							right: 10px;
+						}
+						&-icon{
+							@extend .hda-text-input_group-icon__front;
+							@extend .hda-icon_location;
+						}
+						&-input{
+							@extend .hda-text-input_group-txt-input;
+							@extend .hda-text-input_group-add-auto-suggest;
+						}
+						&-auto-suggest{
+
+							@extend .hda-text-input_group-dropdown;
+						}
+					}
+					&-btn{
+						@extend .hda-button;
+						@extend .hda-button__accent;
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+	&-sym{
+		&-col{
+			column-count: 1;
+			column-width: 220px;
+			column-gap: 0;
+			.radio-btn-group{
+				width: 100%;
+			}
+			&-start{
+				&-btn{
+					@extend .hda-button;
+					@extend .hda-button__accent;
+					width: 100%;
+					margin-bottom: $general-spacing;
+				}
+			}
+		}
+		&-btn{
+			@extend .hda-button;
+			@extend .hda-button__is-anchor;
+			@extend .hda-button__accent;
+			width: 100%;
+		}
+	}
+}
+
+
+@include media-breakpoint-up(tablet) {
+	.homepage_content-tools-panels{
+		.widget-hsf_content{
+			&-col{
+				column-count: 2;
+				width: calc(100% / 3 * 2);
+				float: left;
+				&-start{
+					width: calc(100% / 3);
+					float: right;
+				}
+			}
+		}
+		.widget-sym-col{
+			column-count: 3;
+		}
+	}
+}

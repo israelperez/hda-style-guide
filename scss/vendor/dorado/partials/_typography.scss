@@ -1,0 +1,62 @@
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+@import "compass/css3";
+$fontPath: '../vendor/dorado/fonts/';
+
+//@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700,800);
+@include font-face(
+	"Open Sans",
+	inline-font-files(
+		$fontPath + "opensans/OpenSans-Light-webfont.woff", woff,
+		$fontPath + "opensans/OpenSans-Light-webfont.ttf", truetype,
+		$fontPath + "opensans/OpenSans-Light-webfont.svg", svg),
+	$fontPath + "opensans/OpenSans-Light-webfont.eot",
+	300,
+	normal
+);
+@include font-face(
+	"Open Sans",
+	inline-font-files(
+		$fontPath + "opensans/OpenSans-Regular-webfont.woff", woff,
+		$fontPath + "opensans/OpenSans-Regular-webfont.ttf", truetype,
+		$fontPath + "opensans/OpenSans-Regular-webfont.svg", svg),
+	$fontPath + "opensans/OpenSans-Regular-webfont.eot",
+	400,
+	normal
+);
+@include font-face(
+	"Open Sans",
+	inline-font-files(
+		$fontPath + "opensans/OpenSans-Bold-webfont.woff", woff,
+		$fontPath + "opensans/OpenSans-Bold-webfont.ttf", truetype,
+		$fontPath + "opensans/OpenSans-Bold-webfont.svg", svg),
+	$fontPath + "opensans/OpenSans-Bold-webfont.eot",
+	600,
+	normal
+);
+
+$font-family-sans-serif:	"Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-base:			$font-family-sans-serif !default; // used to set reboot
+
+// Pixel value used to responsively scale all typography. Applied to the `<html>` element.
+$font-size-root: 		16px !default; // used in reboot
+$font-size-root-print:	12px !default; // used in reboot
+$font-size-base: 		1rem !default; // used in reboot
+// $font-size-lg:   	1.25rem !default;
+// $font-size-sm:   	.875rem !default;
+// $font-size-xs:   	.75rem !default;
+$line-height: 			1.5 !default; // used in reboot
+$line-height-headings:	1.2 !default; // used in reboot
+$line-height-print:		1.1 !default; // used in reboot
+
+// heading sizes are calcuate of the root font size:
+$font-size-heading-base:	1em !default; // used in reboot
+$heading-device-factor:		1.2; //Minor Third
+$heading-desktop-factor:	1.333; //Perfect Fourth
+
+$font-weight-root:		400 !default; // used in reboot
+$font-weight-strong:	600 !default; // used in reboot
+$font-weight-heading:	400 !default; // used in reboot
+$font-weight-heading-small: 600 !default; // used in reboot
+$dt-font-weight:		300 !default; // used in reboot

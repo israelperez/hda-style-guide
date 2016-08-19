@@ -1,0 +1,6 @@
+.main_content{
+	&-links-recommended{
+		@extend .cont;
+		@extend .main_content-general-sub-section;
+	}
+}

@@ -1,0 +1,54 @@
+.content_feedback{
+	background-color: $grey-lighter;
+	&-form{
+		@extend .grid-container;
+	}
+	&-col-left{
+		text-align: center;
+		padding: 30px 0;
+		width: 100%;
+
+		label,
+		input,
+		textarea{
+			display: block;
+		}
+		input,
+		textarea{
+			@extend .hda-text-input;
+			width: 100%;
+			background-color: white;
+		}
+		textarea{
+			resize: none;
+			height: 7rem;
+		}
+		button{
+			@extend .hda-button;
+			@extend .hda-button__is-max-width-230;
+			@extend .hda-button__accent;
+			margin-top: 10px;
+		}
+	}
+	&-icons{
+		white-space: nowrap;
+	}
+		&-thumbs-up{
+			@extend .hda-icon_thumbs-up;
+		}
+		&-thumbs-down{
+			@extend .hda-icon_thumbs-down;
+		}
+}
+
+@include media-breakpoint-up(tablet) {
+	.content_feedback-col-left{
+		text-align: left;
+	}
+}
+
+@media print {
+	.content_feedback{
+		display: none;
+	}
+}

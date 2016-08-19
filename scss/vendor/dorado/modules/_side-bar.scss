@@ -1,0 +1,54 @@
+aside {
+    vertical-align: top;
+    // transition: padding .5s, height .5s, top .5s, position .5s, vertical-align .5s;
+	padding-bottom: ($general-spacing * 2);
+    &.is_stuck {
+    	// margin-left: calc(100% - 300px);
+    	//width: 260px !important;
+    }
+    section {
+        &:first-of-type{
+          padding-top: 0;
+          border: none;
+        }
+		    @extend .main_content-general-sub-section;
+        margin-bottom: $general-spacing;
+    }
+	h2{
+		@extend h3;
+	}
+	.social-section_share{
+		.social-icon{
+			margin-right: 7px;
+			&:last-child{
+				margin-right: 0;
+			}
+		}
+	}
+}
+.related-pages-section,
+.recommended-pages-section{
+	@extend .cont;
+}
+.recommended-pages-section{
+	@extend .main_content-general-standout;
+	margin-bottom: 30px;
+	ul{
+		margin-bottom: 0;
+	}
+}
+
+@include media-breakpoint-up(tablet) {
+	.main_content-col-right{
+		float: right;
+		width: 260px;
+	}
+  .related-pages-section{
+    ul{
+      padding-left: 17px;
+    }
+  }
+}
+
+
+/* sticky sidebar */

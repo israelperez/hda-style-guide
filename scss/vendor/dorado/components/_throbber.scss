@@ -1,0 +1,39 @@
+.site-throbber{
+	@extend .print-hidden;
+	position: fixed;
+	top: -10px;
+	left: 0;
+	width: 100%;
+	height: 3px;
+	background: $brand-accent;
+	z-index: $z-index-throbber;
+	transition: top $animation-small-time;
+	border-bottom: 1px solid rgba(255,255,255,.3);
+	&__is-visible{
+		top: 0;
+	}
+	&_loader{
+		height: 3px;
+		width: 3px;
+		animation: slide 5s ease-in-out infinite;
+		background-color: white;
+		position: absolute;
+		&1{
+			@extend .site-throbber_loader;
+			animation-delay: 0.5s;
+		}
+		&2{
+			@extend .site-throbber_loader;
+			animation-delay: 1s;
+		}
+	}
+}
+
+@-webkit-keyframes slide {
+    from{
+        left:-5px;
+    }
+    to{
+        left:100%;
+    }
+}

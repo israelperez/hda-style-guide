@@ -1,0 +1,76 @@
+.clearfix {
+  @include clearfix();
+}
+
+.prevent-col-break{
+	-webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+	page-break-inside: avoid; /* Firefox */
+	break-inside: avoid; /* IE 10+ */
+}
+.floating-header-offset{
+	display: block;
+	height: 120px; /*same height as header*/
+	margin-top: -120px; /*same height as header*/
+	visibility: hidden;
+  float: left;
+}
+@include media-breakpoint-up(tablet) {
+	.floating-header-offset{
+		height: 100px; /*same height as header*/
+		margin-top: -100px; /*same height as header*/
+	}
+}
+
+// Screenreaders
+//
+.sr-only {
+  @include sr-only();
+}
+.sr-only-focusable {
+  @include sr-only-focusable();
+}
+
+
+// Responsive visibility utilities
+@each $bp in map-keys($breakpoints) {
+  .hidden-#{$bp}__up {
+    @include media-breakpoint-up($bp) {
+      display: none !important;
+    }
+  }
+  .hidden-#{$bp}__down {
+    @include media-breakpoint-down($bp) {
+      display: none !important;
+    }
+  }
+}
+
+// Print utilities
+//
+// Media queries are placed on the inside to be mixin-friendly.
+.print-only{
+	display: none;
+}
+.print-only__block {
+  display: none !important;
+  @media print {
+    display: block !important;
+  }
+}
+.print-only__inline {
+  display: none !important;
+  @media print {
+    display: inline !important;
+  }
+}
+.print-only__inline-block {
+  display: none !important;
+  @media print {
+    display: inline-block !important;
+  }
+}
+.print-hidden {
+  @media print {
+    display: none !important;
+  }
+}

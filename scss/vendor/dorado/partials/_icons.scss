@@ -1,0 +1,294 @@
+@include font-face(
+	"hda-icons",
+	inline-font-files(
+		$fontPath + "hda-fus2-icons.woff", woff,
+		$fontPath + "hda-fus2-icons.ttf", truetype,
+		$fontPath + "hda-fus2-icons.svg", svg)
+);
+
+i,
+.icon{
+	font-family: "hda-icons";
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: $line-height;
+	//height: 1em;
+	//width: 1em;
+	//display: inline-block;
+	//vertical-align: middle;
+	//box-sizing: border-box;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+// fixed width ------------------------
+.#{$icon-prefix}__fixed-width{
+	width: (18em / 14);
+	text-align: center;
+}
+
+// stacked ------------------------
+.#{$icon-prefix}__stack {
+  position: relative;
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  vertical-align: middle;
+}
+.#{$icon-prefix}__stack-1x, .#{$icon-prefix}__stack-2x {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+.#{$icon-prefix}__stack-1x { line-height: inherit; }
+.#{$icon-prefix}__stack-2x { font-size: 2em; }
+
+// animations ------------------------
+.#{$icon-prefix}__is-spin {
+	animation: icon-spin $animation-large-time infinite linear;
+}
+
+.#{$icon-prefix}__is-pulse {
+	animation: icon-spin $animation-large-time infinite steps(8);
+}
+
+@-webkit-keyframes icon-spin {
+  0% {
+	  transform: rotate(0deg);
+  }
+  100% {
+	  transform: rotate(359deg);
+  }
+}
+
+@keyframes icon-spin {
+  0% {
+	  transform: rotate(0deg);
+  }
+  100% {
+	  transform: rotate(359deg);
+  }
+}
+
+// custom icons -----------------
+.#{$icon-prefix}_spinner{
+	padding: 0 !important;
+	margin: 0 !important;
+	border: 3px solid $brand-primary;
+	border-left-color: transparent;
+    //border-right-color: transparent;
+    border-radius: 50%;
+}
+
+// icons ------------------------
+.#{$icon-prefix}_walk:before {
+    content: "\e600";
+}
+.#{$icon-prefix}_circle-warning:before {
+    content: "\e601";
+}
+.#{$icon-prefix}_linkedin:before {
+    content: "\e602";
+}
+.#{$icon-prefix}_heart:before {
+    content: "\e603";
+}
+.#{$icon-prefix}_heart-broken:before {
+    content: "\e604";
+}
+.#{$icon-prefix}_logo:before {
+    content: "\e605";
+}
+.#{$icon-prefix}_logo-small:before {
+    content: "\e606";
+}
+.#{$icon-prefix}_location:before {
+    content: "\e607";
+}
+.#{$icon-prefix}_location2:before {
+    content: "\e608";
+}
+.#{$icon-prefix}_printer:before {
+    content: "\e609";
+}
+.#{$icon-prefix}_user:before {
+    content: "\e60a";
+}
+.#{$icon-prefix}_search:before {
+    content: "\e60b";
+}
+.#{$icon-prefix}_user-md:before {
+    content: "\e60c";
+}
+.#{$icon-prefix}_stethoscope:before {
+    content: "\e60d";
+}
+.#{$icon-prefix}_hospital:before {
+    content: "\e60e";
+}
+.#{$icon-prefix}_ambulance:before {
+    content: "\e60f";
+}
+.#{$icon-prefix}_medkit:before {
+    content: "\e610";
+}
+.#{$icon-prefix}_h-square:before {
+    content: "\e611";
+}
+.#{$icon-prefix}_file:before {
+    content: "\e612";
+}
+.#{$icon-prefix}_file-pdf:before {
+    content: "\e613";
+}
+.#{$icon-prefix}_file-text:before {
+    content: "\e614";
+}
+.#{$icon-prefix}_circle-heart:before {
+    content: "\e615";
+}
+.#{$icon-prefix}_heartbeat:before {
+    content: "\e616";
+}
+.#{$icon-prefix}_tick:before {
+    content: "\e617";
+}
+.#{$icon-prefix}_cross:before {
+    content: "\e618";
+}
+.#{$icon-prefix}_download:before {
+    content: "\e619";
+}
+.#{$icon-prefix}_circle-cross:before {
+    content: "\e61a";
+}
+.#{$icon-prefix}_warning:before {
+    content: "\e61b";
+}
+.#{$icon-prefix}_twitter:before {
+    content: "\e61c";
+}
+.#{$icon-prefix}_facebook:before {
+    content: "\e61d";
+}
+.#{$icon-prefix}_google-plus:before {
+    content: "\e61e";
+}
+.#{$icon-prefix}_pinterest:before {
+    content: "\e61f";
+}
+.#{$icon-prefix}_square:before {
+    content: "\e620";
+}
+.#{$icon-prefix}_square-check:before {
+    content: "\e621";
+}
+.#{$icon-prefix}_menu:before {
+    content: "\e622";
+}
+.#{$icon-prefix}_caret-down:before {
+    content: "\e623";
+}
+.#{$icon-prefix}_caret-up:before {
+    content: "\e624";
+}
+.#{$icon-prefix}_caret-left:before {
+    content: "\e625";
+}
+.#{$icon-prefix}_caret-right:before {
+    content: "\e626";
+}
+.#{$icon-prefix}_envelope:before {
+    content: "\e627";
+}
+.#{$icon-prefix}_angle-down:before {
+    content: "\e628";
+}
+.#{$icon-prefix}_angle-up:before {
+    content: "\e629";
+}
+.#{$icon-prefix}_angle-left:before {
+    content: "\e62a";
+}
+.#{$icon-prefix}_angle-right:before {
+    content: "\e62b";
+}
+.#{$icon-prefix}_desktop:before {
+    content: "\e62c";
+}
+.#{$icon-prefix}_laptop:before {
+    content: "\e62d";
+}
+.#{$icon-prefix}_tablet:before {
+    content: "\e62e";
+}
+.#{$icon-prefix}_mobile:before {
+    content: "\e62f";
+}
+.#{$icon-prefix}_circle:before {
+    content: "\e630";
+}
+.#{$icon-prefix}_circle-check:before {
+    content: "\e631";
+}
+.#{$icon-prefix}_thumbs-up:before {
+    content: "\e632";
+}
+.#{$icon-prefix}_thumbs-down:before {
+    content: "\e633";
+}
+.#{$icon-prefix}_arrow-down:before {
+    content: "\e634";
+}
+.#{$icon-prefix}_arrow-up:before {
+    content: "\e635";
+}
+.#{$icon-prefix}_arrow-left:before {
+    content: "\e636";
+}
+.#{$icon-prefix}_arrow-right:before {
+    content: "\e637";
+}
+.#{$icon-prefix}_circle-o-notch:before {
+    content: "\e638";
+}
+.#{$icon-prefix}_syringe:before {
+    content: "\e639";
+}
+.#{$icon-prefix}_list:before {
+    content: "\e63a";
+}
+.#{$icon-prefix}_phone:before {
+    content: "\e63b";
+}
+.#{$icon-prefix}_file-bill:before {
+    content: "\e63c";
+}
+.#{$icon-prefix}_wheelchair:before {
+    content: "\e63d";
+}
+.#{$icon-prefix}_car:before {
+    content: "\e63e";
+}
+.#{$icon-prefix}_clock:before {
+    content: "\e63f";
+}
+.#{$icon-prefix}_gear:before {
+    content: "\e640";
+}
+.#{$icon-prefix}_question:before {
+    content: "\e641";
+}
+.#{$icon-prefix}_exclamation:before {
+    content: "\e642";
+}
+.#{$icon-prefix}_share:before {
+    content: "\e643";
+}

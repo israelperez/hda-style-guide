@@ -1,0 +1,202 @@
+/*			Grid
+*********************************/
+
+// Grid breakpoints
+//
+// Define the minimum and maximum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+// $grid-breakpoints: $breakpoints;
+
+
+// Framework grid generation
+//
+// Used only by Bootstrap to generate the correct number of grid classes given
+// any value of `$grid-columns`.
+@mixin make-grid-columns($columns: $grid-columns, $gutter: $grid-gutter-width, $grid-breakpoints: $breakpoints) {
+	// Common properties for all breakpoints
+	%grid-column {
+		position: relative;
+		// Prevent columns from collapsing when empty
+		min-height: 1px;
+		// Inner gutter via padding
+		padding-left: ($gutter / 2);
+		padding-right: ($gutter / 2);
+	}
+	$breakpoint-counter: 0;
+	@each $breakpoint in map-keys($grid-breakpoints) {
+		$breakpoint-counter: ($breakpoint-counter + 1);
+		@for $i from 1 through $columns {
+			.grid-#{$breakpoint}_col-#{$i} {
+				position: relative;
+				// Prevent columns from collapsing when empty
+				min-height: 1px;
+				// Inner gutter via padding
+				padding-left: ($gutter / 2);
+				padding-right: ($gutter / 2);
+			}
+		}
+		@include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+			// Work around cross-media @extend (https://github.com/sass/sass/issues/1050)
+			%grid-column-float-#{$breakpoint} {
+				float: left;
+			}
+			@for $i from 1 through $columns {
+				.grid-#{$breakpoint}_col-#{$i} {
+					@if not $enable-flex {
+						@extend %grid-column-float-#{$breakpoint};
+					}
+					@include make-col-span($i, $columns);
+				}
+			}
+			@each $modifier in (pull, push) {
+				@for $i from 0 through $columns {
+					.grid-#{$breakpoint}_col__#{$modifier}-#{$i} {
+						@include make-col-modifier($modifier, $i, $columns)
+					}
+				}
+			}
+			// `$columns - 1` because offsetting by the width of an entire row isn't possible
+			@for $i from 0 through ($columns - 1) {
+				@if $breakpoint-counter != 1 or $i != 0 { // Avoid emitting useless .col-xs-offset-0
+					.grid-#{$breakpoint}_col__offset-#{$i} {
+						@include make-col-modifier(offset, $i, $columns)
+					}
+				}
+			}
+		}
+	}
+}
+
+/// Grid system
+//
+// Generate semantic grid columns with these mixins.
+@mixin make-container($gutter: $grid-gutter-width) {
+	margin-left: auto;
+	margin-right: auto;
+	padding-left:  ($gutter / 2);
+	padding-right: ($gutter / 2);
+	@if not $enable-flex {
+		@include clearfix();
+	}
+}
+
+
+// For each breakpoint, define the maximum width of the container in a media query
+@mixin make-container-max-widths($max-widths: $container-max-widths, $grid-breakpoints: $breakpoints) {
+	@each $breakpoint, $container-max-width in $max-widths {
+		@include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+			max-width: $container-max-width;
+		}
+	}
+}
+
+@mixin make-row($gutter: $grid-gutter-width) {
+	@if $enable-flex {
+		display: flex;
+		flex-wrap: wrap;
+	} @else {
+		@include clearfix();
+	}
+	margin-left:  ($gutter / -2);
+	margin-right: ($gutter / -2);
+}
+
+@mixin make-col($gutter: $grid-gutter-width) {
+	position: relative;
+	@if not $enable-flex {
+		float: left;
+	}
+	min-height: 1px;
+	padding-left:  ($gutter / 2);
+	padding-right: ($gutter / 2);
+}
+
+@mixin make-col-span($size, $columns: $grid-columns) {
+	@if $enable-flex {
+		flex: 0 0 percentage($size / $columns);
+		// Add a `max-width` to ensure content within each column does not blow out
+		// the width of the column. Applies to IE10+ and Firefox. Chrome and Safari
+		// do not appear to require this.
+		max-width: percentage($size / $columns);
+	} @else {
+		width: percentage($size / $columns);
+	}
+}
+
+@mixin make-col-offset($size, $columns: $grid-columns) {
+	margin-left: percentage($size / $columns);
+}
+
+@mixin make-col-push($size, $columns: $grid-columns) {
+	left: if($size > 0, percentage($size / $columns), auto);
+}
+
+@mixin make-col-pull($size, $columns: $grid-columns) {
+	right: if($size > 0, percentage($size / $columns), auto);
+}
+
+@mixin make-col-modifier($type, $size, $columns) {
+	// Work around the lack of dynamic mixin @include support (https://github.com/sass/sass/issues/626)
+	@if $type == push {
+		@include make-col-push($size, $columns);
+	} @else if $type == pull {
+		@include make-col-pull($size, $columns);
+	} @else if $type == offset {
+		@include make-col-offset($size, $columns);
+	}
+}
+
+// Container widths
+//
+// Set the container width, and override it for fixed navbars in media queries.
+@if $enable-grid-classes {
+	.grid-container {
+		@include make-container();
+		@include make-container-max-widths();
+	}
+	// @media print {
+	// 	.grid-container {
+	// 		@include make-container();
+	// 		@include make-container-max-widths();
+	// 	}
+	// }
+}
+
+// Fluid container
+//
+// Utilizes the mixin meant for fixed width containers, but without any defined
+// width for fluid, full width layouts.
+@if $enable-grid-classes {
+	.grid-container__fluid {
+		@include make-container();
+	}
+	// @media print {
+	// 	.grid-container__fluid {
+	// 		@include make-container();
+	// 	}
+	// }
+}
+
+// Row
+//
+// Rows contain and clear the floats of your columns.
+@if $enable-grid-classes {
+	.grid-row {
+		@include make-row();
+	}
+	// @media print {
+	// 	.grid-row {
+	// 		@include make-row();
+	// 	}
+	// }
+}
+
+// Columns
+//
+// Common styles for small and large grid columns
+@if $enable-grid-classes {
+	@include make-grid-columns();
+	// @media print {
+	// 	@include make-grid-columns();
+	// }
+}

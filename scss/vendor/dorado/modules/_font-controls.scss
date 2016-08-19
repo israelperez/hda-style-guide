@@ -1,0 +1,24 @@
+.main_content{
+	&-font-controls{
+		margin-bottom: $general-spacing;
+		&-btn{
+			background: $body-bg-colour;
+			border: none;
+			color: $text-muted;
+			font-weight: $font-weight-strong;
+			font-size: 1.25rem;
+			margin-right: $general-spacing / 2;
+			padding: 5px 0;
+			min-width: 40px;
+			&[aria-checked="true"]{
+				color: $brand-primary;
+				border-bottom: 3px solid $brand-secondary;
+			}
+		}
+	}
+}
+@media print {
+	hda-resize-font{
+		@extend .print-hidden;
+	}
+}

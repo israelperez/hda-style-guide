@@ -1,0 +1,78 @@
+// Forms with less than 10 inputs (radio groups and checkbox groups count as 1 input) are considered small forms
+// errors are handled by a section containing all errors with red lines on individual inputs
+// NOTE: large forms have an error section containing all error messages with redlines on individual inputs;
+// as well as individual error messages per input and links from the error section to form input with error
+
+.hda-form{
+	label{
+		width: 100%;
+		+ fieldset{
+			margin-top: 10px;
+		}
+	}
+	&_input-group{
+		position: relative;
+		margin-bottom: $general-spacing;
+		break-inside: avoid-column;
+		page-break-inside: avoid;
+		input[type="text"],
+		input[type="tel"],
+		input[type="email"],
+		textarea,
+		*:last-child{ // the text input must be last
+			margin-bottom: 0;
+		}
+		&-input{
+			margin-bottom: 0 !important;
+		}
+		&-error{
+			color: $brand-error;
+			margin-bottom: 0;
+		}
+		&__has-icon{ // input with icon
+			@extend .hda-text-input_group;
+			@extend .hda-text-input_group-text-field;
+			i{
+				@extend .hda-text-input_group-icon__back;
+				background-color: $brand-primary;
+				color: $brand-text-on-primary;
+			}
+			input[type="text"]{
+				@extend .hda-text-input_group-txt-input;
+			}
+		}
+	}
+	%inputMessages{
+		position: relative;
+		top: -$general-spacing;
+	}
+	&_required{
+		color: $hda-red;
+	}
+	&_input-description{
+		//@extend %inputMessages;
+		margin-bottom: 0;
+		font-size: 0.8em;
+	}
+	&_error{
+		@extend %inputMessages;
+		color: $brand-error;
+	}
+	*[class*='-success-area']{
+		@extend .success_section;
+	}
+	*[class*='-error-area']{
+		@extend .error_section;
+	}
+}
+
+@include media-breakpoint-up(tablet) {
+	.hda-form_input-group{
+		margin-bottom: $general-spacing * 2;
+		&-error{
+			position: absolute;
+			left: 0;
+			top: 100%;
+		}
+	}
+}

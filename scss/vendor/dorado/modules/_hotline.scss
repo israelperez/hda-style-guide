@@ -1,0 +1,59 @@
+.content_hotline{
+	background-color: $brand-primary;
+	color: $brand-text-on-primary;
+	font-size: 1.25rem;
+	text-align: center;
+	p:last-child{
+		margin-bottom: 0;
+	}
+	&-container{
+		@extend .grid-container;
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+	&-phone{
+		font-size: 2.25rem;
+		color: white;
+		text-decoration: none;
+		&:hover{
+			color: white;
+			text-decoration: none;
+		}
+		&-icon{
+			@extend .hda-icon_mobile;
+			font-size: 36px;
+			line-height: 1rem;
+			position: relative;
+			top: 4px;
+		}
+	}
+}
+@media print {
+	.content_hotline{
+		color: $body-text-colour;
+		background: none;
+		padding-top: $general-spacing;
+		border-top: 1px solid $brand-primary;
+		margin-bottom: $general-spacing;
+		clear: both;
+		font-size: 1rem;
+		a{
+			color: $body-text-colour;
+		}
+		&-container{
+			padding-top: 0;
+			padding-bottom: 0;
+			p{
+				display: inline-block;
+				margin-bottom: 0;
+			}
+		}
+		&-phone{
+			font-size: 1rem;
+			&-icon{
+				font-size: 1rem;
+				top: 1px;
+			}
+		}
+	}
+}

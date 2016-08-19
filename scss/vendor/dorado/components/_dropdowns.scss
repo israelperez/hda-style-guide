@@ -1,0 +1,96 @@
+.hda-dropdown{
+	&_group{
+		position: relative;
+		display: inline-block;
+		page-break-inside: avoid;
+	}
+	&_button{
+		@extend .hda-button;
+		@extend .hda-button__accent;
+		min-width: 275px;
+		text-align: left;
+		padding-right: 40px;
+		&[aria-expanded="true"] + .hda-dropdown_menu{
+			display: block;
+		}
+		span{ //Label in button will never go mulitline
+			display: block;
+			width: 100%;
+			overflow: hidden;
+			white-space: nowrap;
+		}
+		&-icon{
+			@extend .hda-icon_caret-down;
+			position: absolute;
+			width: 36px;
+			right: 0;
+			top: 50%;
+			margin-top: -0.75em;
+			text-align: center;
+			border-left: 1px solid white;
+			display: block;
+		}
+	}
+	&_menu{
+		position: absolute;
+		top: 100%;
+		left: 0;
+		z-index: $zindex-dropdown;
+		display: none; // none by default, but block on "open" of the menu
+		width: 100%;
+		padding: 5px 0;
+		margin: 2px 0 0; // override default ul
+		text-align: left; // Ensures proper alignment if parent has it changed (e.g., modal footer)
+		list-style: none;
+		background-color: $dropdown-bg-colour;
+		border: $dropdown-border-width solid $dropdown-border-colour;
+		box-shadow: $paper-depth1;
+		li{
+			padding: 3px 20px;
+			color: $dropdown-link-colour;
+			white-space: nowrap;
+			cursor: pointer;
+			@include hover-focus {
+				color: $dropdown-link-hover-colour;
+				text-decoration: none;
+				background-color: $dropdown-link-hover-bg-colour;
+			}
+			&:before{
+				display: none;
+			}
+		}
+	}
+}
+.hda-form_input-group{
+	&-dropdown{
+		@extend .hda-button;
+		@extend .hda-button__accent;
+		position: relative;
+		width: 100%;
+		max-width: 275px;
+		padding: 0;
+		margin: 0;
+		select{
+			border: none;
+			background: none;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			width: 100%;
+			padding: 8px 40px 8px 20px;
+			font-size: 0.8rem;
+			text-transform: uppercase;
+			position: relative;
+			z-index: 1;
+			&::-ms-expand { /* for IE 11 */
+			    display: none;
+			}
+			option{
+				background: white !important;
+				color: $body-text-colour !important;
+				text-transform: capitalize;
+				font-weight: $font-weight-root;
+			}
+		}
+	}
+}

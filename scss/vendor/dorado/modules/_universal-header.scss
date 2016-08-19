@@ -1,0 +1,186 @@
+/*
+		Universal Header
+*********************************/
+
+// Colours
+$hda-uh-body-text-colour:			#333; //$grey-darkest
+$hda-uh-dropdown-bg-colour:			white;
+$hda-uh-dropdown-border-color:		#eaeaea; //$grey-lighter
+$hda-uh-dropdown-link-color:		#333; //$grey-darkest
+$hda-uh-dropdown-link-hover-color:	#333; //$grey-darkest
+$hda-uh-dropdown-link-hover-bg:		#eaeaea; //$grey-lighter
+
+// Options
+$hda-uh-font-size-base: 			12px;
+$hda-uh-zindex-dropdown:			1010; //$zindex-dropdown
+$hda-uh-dropdown-border-width:		1px;
+$hda-uh-line-height:				1.5; //$line-height
+$hda-uh-zindex:						1000; //standard nav bar is 1000
+
+.hda-uh{
+	position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+	background-color: #545454;
+	color: white;
+	font-size: 12px;
+	box-shadow: $paper-depth1;
+	a{
+		text-decoration: none;
+	}
+	nav{
+		@extend .grid-container;
+		padding: 0;
+		> ul{
+			@extend .clearfix;
+			margin: 0;
+			> li{
+				float:left;
+				border-right: 1px solid #3a3a3a;
+				&.hda-uh_item__has-dropdown{
+					@extend .btn-group;
+				}
+				> a, > button{
+					color: inherit;
+					font-size: inherit;
+					padding: 9px 20px;
+					height: 36px;
+				}
+				> a{
+					display: inline-block;
+					&[aria-expanded="true"] + .hda-uh-dropdown{
+						display: block;
+					}
+				}
+				> button{
+					border: none;
+					background-color: transparent;
+					&[aria-expanded="true"] + .hda-uh-dropdown-menu{
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}
+
+	.hda-uh_hda-logo-icon-m{
+		@extend .hda-icon_logo-small;
+	}
+	.hda-uh_hda-logo-icon{
+		@extend .hda-icon_logo;
+		position: relative;
+		display: inline-block;
+		width: 80px;
+		&:before{
+			position: absolute;
+			top: -5px;
+			left: 0;
+			font-size: 20px;
+		}
+	}
+
+.hda-uh-dropdown-menu{
+	position: absolute;
+	top: 36px;
+	left: 0;
+	z-index: $hda-uh-zindex-dropdown;
+	display: none; // none by default, but block on "open" of the menu
+	float: left;
+	min-width: 160px;
+	margin: 0; // override default ul
+	font-size: $hda-uh-font-size-base;
+	color: $hda-uh-body-text-colour;
+	text-align: left; // Ensures proper alignment if parent has it changed (e.g., modal footer)
+	list-style: none;
+	background-color: $hda-uh-dropdown-bg-colour;
+	background-clip: padding-box;
+	border: $hda-uh-dropdown-border-width solid $hda-uh-dropdown-border-color;
+	box-shadow: $paper-depth1;
+	li{
+		border-bottom: $hda-uh-dropdown-border-width solid $hda-uh-dropdown-border-color;
+		&:last-child{
+			border: none;
+		}
+	}
+	li a{
+		display: block;
+		width: 100%;
+		padding: 5px 20px;
+		clear: both;
+		font-weight: normal;
+		line-height: $hda-uh-line-height;
+		color: $hda-uh-dropdown-link-color;
+		text-align: inherit;
+		white-space: nowrap; // prevent links from randomly breaking onto new lines
+		background: none;
+		border: 0;
+		@include hover-focus {
+			color: $hda-uh-dropdown-link-hover-color;
+			text-decoration: none;
+			background-color: $hda-uh-dropdown-link-hover-bg;
+		}
+	}
+}
+
+// Desktop layout
+.hda-uh_button{
+	display: block;
+	border-radius: 5px;
+	font-size: 14px;
+	padding: 6px;
+	text-align: center;
+}
+
+.hda-uh-dropdown{
+	position: absolute;
+	top: 36px;
+	left: 0;
+	z-index: $hda-uh-zindex-dropdown;
+	display: none; // none by default, but block on "open" of the menu
+	float: left;
+	width: 260px;
+	padding: 12px;
+	margin: 0; // override default ul
+	font-size: $hda-uh-font-size-base;
+	color: $hda-uh-body-text-colour;
+	text-align: left; // Ensures proper alignment if parent has it changed (e.g., modal footer)
+	list-style: none;
+	background-color: $hda-uh-dropdown-bg-colour;
+	background-clip: padding-box;
+	border: $hda-uh-dropdown-border-width solid $hda-uh-dropdown-border-color;
+	box-shadow: $paper-depth1;
+	img{
+		height: 36px;
+		margin-bottom: 6px;
+	}
+	a{
+		@extend .hda-uh_button;
+		color: white;
+		&:hover{
+			opacity: 0.8;
+			text-decoration: none;
+		}
+	}
+}
+.hda-uh_item-visit-hda{
+	background-color: $hda-teal-deep;
+}
+.hda-uh_item-visit-pbb{
+	background-color: #474973;
+}
+.hda-uh_item-visit-mhc{
+	background-color: #3b679b;
+}
+.hda-uh_item-visit-mac{
+	background-color: #594161;
+}
+.hda-uh_item-visit-carer{
+	background-color: #5b57a4;
+}
+@include media-breakpoint-up(desktop) {
+	.hda-uh nav a[aria-expanded="true"]{
+		background-color: #3a3a3a;
+	}
+}

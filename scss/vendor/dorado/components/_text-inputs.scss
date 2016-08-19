@@ -1,0 +1,134 @@
+.hda-text-input{
+	background-color: $form-control-bg-color;
+	color: $body-text-colour;
+	//border: none;
+	margin-bottom: $general-spacing;
+	border: 1px solid transparent;
+	&[aria-invalid="true"]{
+		border-color: $hda-red;
+		&:focus{
+			outline-color: $hda-red;
+		}
+	}
+	&_group{
+		position: relative;
+		margin-bottom: $general-spacing;
+		input{
+			margin: 0;
+			width: 100%;
+		}
+		&-text-field{
+			background-color: $form-control-bg-color;
+		}
+		&-icon__btn{
+			background-color: $brand-primary;
+			color: $brand-text-on-primary;
+		}
+		&-icon__front,
+		&-icon__back{
+			position: absolute;
+			top: 0;
+			padding: 7px 0;
+			text-align: center;
+			width: 40px;
+			height: 100%;
+		}
+		&-icon__front{
+			left: 0;
+			~ .hda-text-input_group-txt-input{
+				padding-left: 40px;
+			}
+		}
+		&-icon__back{
+			right: 0;
+			~ .hda-text-input_group-txt-input{
+				padding-right: 40px;
+			}
+		}
+		&-txt-input{
+			display: table-cell;
+			background-color: transparent;
+			//border: none;
+			width: 100%;
+		}
+		&-add-auto-suggest{
+			&[aria-expanded="true"]{
+				~ .hda-text-input_group-dropdown-group{
+					display: block;
+				}
+			}
+		}
+		&-dropdown-group{
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			background-color: white;
+			border: 1px solid $border-colour;
+			z-index: $zindex-dropdown;
+			max-height: 220px;
+			width: 100%;
+			overflow-y: auto;
+			box-shadow: $paper-depth1;
+			&-list{
+				list-style-type: none;
+				padding: 0;
+				margin: 0;
+				width: 100%;
+				li:not(.hda-text-input_group-dropdown-group-list-heading){
+					padding: 8px;
+					cursor: pointer;
+					&:hover,
+					&:focus{
+						background-color: $grey-lightest;
+					}
+				}
+				&-heading{
+					padding: 8px;
+					color: $brand-text-on-primary;
+					background-color: $brand-primary;
+					font-weight: $font-weight-strong;
+				}
+			}
+		}
+		&-dropdown{
+			@extend .hda-text-input_group-dropdown-group;
+			@extend .hda-text-input_group-dropdown-group-list;
+		}
+		&_add-button{
+			display: table-cell;
+			width: 1%;
+		}
+	}
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+textarea{
+	@extend .hda-text-input;
+	// border: 1px solid transparent;
+	// &[aria-invalid="true"]{
+	// 	border-color: $hda-red;
+	// 	&:focus{
+	// 		outline-color: $hda-red;
+	// 	}
+	// }
+}
+textarea{
+	//@extend .hda-text-input;
+	resize: none;
+	width: 100%;
+	min-height: 90px;
+	display: block;
+}
+@media print {
+	.hda-text-input{
+		border: 1px solid $form-control-bg-color !important;
+		margin-bottom: $general-spacing / 2;
+	}
+}

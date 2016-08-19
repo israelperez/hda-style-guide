@@ -22,7 +22,8 @@ module.exports = function(grunt) {
     compass: {
       options: {
         sassDir: 'scss',
-        cssDir: 'css'
+        cssDir: 'css',
+        fontsDir: 'scss/fonts'
       },
       dev: {
         options: {

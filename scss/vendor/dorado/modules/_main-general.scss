@@ -1,0 +1,152 @@
+.main_content{
+	@extend .clearfix;
+	@extend .grid-container;
+	position: relative;
+	&-general{
+		&-section{
+			margin-bottom: $general-spacing * 2;
+			padding: $general-spacing;
+			border-left: 7px solid $brand-primary;
+			background-color: $grey-lightest;
+			> *:last-child{
+				margin-bottom: 0;
+			}
+		}
+		&-sub-section{
+			padding-top: $general-spacing * 1.5;
+			border-top: 1px solid $brand-primary;
+			margin-bottom: $general-spacing;
+			clear: both;
+		}
+		&-tile{
+			display: block;
+			text-decoration: none;
+			border-left: 7px solid $brand-secondary;
+			border-top: 1px solid $border-colour;
+			border-right: 1px solid $border-colour;
+			border-bottom: 1px solid $border-colour;
+			padding: $general-spacing;
+			margin-bottom: $general-spacing;
+			page-break-inside: avoid;
+			color: $body-text-colour;
+			&:hover{
+				text-decoration: none;
+				background-color: $grey-lightest;
+				color: inherit;
+			}
+			&__is-card{
+				margin-bottom: -1px;
+			}
+		}
+		&-standout{
+			padding: 20px;
+			margin-bottom: $general-spacing;
+			background-color: $grey-lighter;
+			h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child{
+				margin-top: 0;
+			}
+			p:last-child{
+				margin-bottom: 0;
+			}
+			&__is-brand-primary{
+				background-color: $brand-primary;
+				h1, h2, h3, h4, h5, h6, p, a{
+					color: $brand-text-on-primary;
+				}
+			}
+			&__is-brand-secondary{
+				background-color: $brand-secondary;
+				h1, h2, h3, h4, h5, h6, p, a{
+					color: $brand-text-on-secondary;
+				}
+			}
+		}
+		&-text{
+			font-size: 1rem;
+			margin-bottom: $general-spacing;
+			position: relative;
+			transition: all $animation-large-time;
+			&__is-a-plus{
+				font-size: 1.25rem;
+			}
+			&__is-a-plus-plus{
+				font-size: 1.5rem;
+			}
+			h1{
+				font-size: $font-size-heading-base * pow($heading-device-factor, 4);
+				margin-bottom: $general-spacing;
+			}
+			h2{
+				font-size: $font-size-heading-base * pow($heading-device-factor, 3);
+			}
+			h3{
+				font-size: $font-size-heading-base * pow($heading-device-factor, 2);
+			}
+			h4{
+				font-size: $font-size-heading-base * $heading-device-factor;
+			}
+			h5{
+				font-size: $font-size-heading-base;
+			}
+			h6{
+				font-size: $font-size-heading-base / $heading-device-factor;
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up(tablet) {
+	.main_content-general-tile{
+		margin-bottom: $general-spacing * 2;
+	}
+	.main_content-general-text{
+		h1{
+			font-size: $font-size-heading-base * pow($heading-desktop-factor, 4);
+		}
+		h2{
+			font-size: $font-size-heading-base * pow($heading-desktop-factor, 3);
+		}
+		h3{
+			font-size: $font-size-heading-base * pow($heading-desktop-factor, 2);
+		}
+		h4{
+			font-size: $font-size-heading-base * $heading-desktop-factor
+		}
+		h5{
+			font-size: $font-size-heading-base;
+		}
+		h6{
+			font-size: $font-size-heading-base / $heading-desktop-factor;
+		}
+	}
+}
+
+@media print {
+	.main_content{
+		&-general{
+			&-section{
+				padding: 0 $general-spacing;
+				margin-bottom: $general-spacing;
+			}
+			&-sub-section{
+				margin-top: $general-spacing;
+				padding-top: $general-spacing;
+			}
+			&-standout{
+				border: 1px double $grey-lighter;
+				&__is-brand-primary{
+					border: 1px dashed $brand-primary;
+				}
+				&__is-brand-secondary{
+					border: 1px dotted $brand-secondary;
+				}
+			}
+			&-tile{
+				margin-bottom: $general-spacing / 2;
+			}
+			&-text{
+				max-height: none !important;
+			}
+		}
+	}
+}

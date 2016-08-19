@@ -1,0 +1,46 @@
+.content_partners{
+	@extend .grid-container;
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	p:last-child{
+		margin-bottom: 0;
+	}
+	img:not(.content_partners-hda-logo){
+		max-width: 95px;
+		max-height: 65px;
+		margin: 0 14px 16px;
+	}
+	a:first-child{
+		img:not(.content_partners-hda-logo){
+			max-width: 220px;
+		}
+	}
+	&-hda-logo{
+		height: 50px;
+		margin-bottom: 20px;
+	}
+}
+@media print {
+	.content_partners{
+		page-break-inside: avoid;
+		padding-bottom: 0;
+		padding-top: $general-spacing;
+		border-top: 1px solid $brand-primary;
+		margin-bottom: $general-spacing;
+		margin-top: $general-spacing;
+		clear: both;
+		&-hda-logo{
+			height: 30px;
+		}
+		img:not(.content_partners-hda-logo){
+			max-width: 55px;
+			margin: 0 10px;
+		}
+		a:first-child{
+			img:not(.content_partners-hda-logo){
+				max-width: 150px;
+			}
+		}
+	}
+}
