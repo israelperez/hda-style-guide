@@ -12,6 +12,7 @@ body{
     overflow: hidden;
     &-menu {
       @extend .site_menu-effect-9;
+      box-shadow: $paper-depth2;
       overflow-y: auto;
       position: absolute;
       top: 0;
@@ -93,7 +94,7 @@ body{
       /* hide native checkbox */
       position: absolute;
       opacity: 0;
-      // open and closing handled by jquery 
+      // open and closing handled by jquery
       // &:checked + label + ul,
       // &:checked + label:nth-of-type(n) + ul{
       //   display: block;
