@@ -8,9 +8,11 @@ var UIEngine = {
     windowObj: $(window),
     siteContainer: $('.site_container'),
     menuButton: $('.site_container-menu-button'),
-    menuItems: $('.site_container-menu ul a'),
+    menuItems: $('.site_container-menu-nav ul a'),
+    menuGroupBtns: $('.site_container-menu-nav input'),
     siteContent: $('.site_container-pusher')
   },
+  _animationSmallTime: 500,
   eventtype: null,
 
   // private funtions and methods
@@ -18,6 +20,8 @@ var UIEngine = {
     this._elements.menuButton.on('touchstart click', function(e){
       e.stopPropagation();
       e.preventDefault();
+
+      // Side bar listeners
       UIEngine._elements.siteContainer.addClass('site_menu-effect-9');
       setTimeout( function() {
         UIEngine._elements.siteContainer.addClass('site_container-menu__is-open');
@@ -26,9 +30,18 @@ var UIEngine = {
         UIEngine._closeNav();
       });
       UIEngine._elements.menuItems.one('touchstart click', function() {
-        //load content
+        // TODO: load content
         UIEngine._closeNav();
       });
+      UIEngine._elements.menuGroupBtns.on('change', function(){
+        var input = $(this);
+        if(input.prop('checked')){
+          input.siblings('ul').slideDown(UIEngine._animationSmallTime);
+        }else{
+          input.siblings('ul').slideUp(UIEngine._animationSmallTime);
+        }
+      });
+
     });
   },
   _closeNav: function() {

@@ -93,10 +93,11 @@ body{
       /* hide native checkbox */
       position: absolute;
       opacity: 0;
-      &:checked + label + ul,
-      &:checked + label:nth-of-type(n) + ul{
-        display: block;
-      }
+      // open and closing handled by jquery 
+      // &:checked + label + ul,
+      // &:checked + label:nth-of-type(n) + ul{
+      //   display: block;
+      // }
       &:checked + label i{
         transform: rotate(90deg);
       }
