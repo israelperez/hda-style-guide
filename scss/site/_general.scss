@@ -9,14 +9,15 @@ html, body, .site_container, .site_container-pusher {
     overflow: hidden;
     &-menu {
       @extend .site_menu-effect-9;
+      overflow-y: auto;
       position: absolute;
       top: 0;
       left: 0;
-      z-index: 100;
+      z-index: $zindex-navbar;
       visibility: hidden;
       width: 300px;
       height: 100%;
-      background: #48a770;
+      background: $body-bg-colour;
       -webkit-transition: all 0.5s;
       transition: all 0.5s;
       &::after {
@@ -47,41 +48,9 @@ html, body, .site_container, .site_container-pusher {
           transition: opacity 0.5s;
         }
       }
-      ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        li {
-          a {
-            display: block;
-            padding: 1em 1em 1em 1.2em;
-            outline: none;
-            box-shadow: inset 0 -1px rgba(0, 0, 0, 0.2);
-            color: #f3efe0;
-            text-transform: uppercase;
-            text-shadow: 0 0 1px rgba(255, 255, 255, 0.1);
-            letter-spacing: 1px;
-            font-weight: 400;
-            -webkit-transition: background 0.3s, box-shadow 0.3s;
-            transition: background 0.3s, box-shadow 0.3s;
-          }
-          &:firsite_child a {
-            box-shadow: inset 0 -1px rgba(0, 0, 0, 0.2), inset 0 1px rgba(0, 0, 0, 0.2);
-          }
-          a:hover {
-            background: rgba(0, 0, 0, 0.2);
-            box-shadow: inset 0 -1px rgba(0, 0, 0, 0);
-            color: #fff;
-          }
-        }
-      }
-      h2 {
-        margin: 0;
-        padding: 1em;
-        color: rgba(0, 0, 0, 0.4);
-        text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
-        font-weight: 300;
-        font-size: 2em;
+      &-logo{
+        height: 30px;
+        margin: $general-spacing;
       }
     }
     &-pusher {
@@ -111,6 +80,68 @@ html, body, .site_container, .site_container-pusher {
         &-inner {
           position: relative;
         }
+      }
+    }
+  }
+}
+.accordion{
+  &_group{
+    input[type=checkbox] {
+      /* hide native checkbox */
+      position: absolute;
+      opacity: 0;
+      &:checked + label + ul,
+      &:checked + label:nth-of-type(n) + ul{
+        display: block;
+      }
+      &:checked + label i{
+        transform: rotate(90deg);
+      }
+    }
+  }
+  label,
+  a{
+    position: relative;
+    display: block;
+    padding: 18px 18px 18px 44px;
+    margin-bottom: 0;
+    background: $grey-darker;
+    color: $text-colour-on-dark;
+    transition: opacity $animation-small-time;
+    box-shadow: inset 0 -1px #444;
+    &:hover{
+      opacity: 0.8;
+    }
+  }
+  label{
+    i{
+      position: absolute;
+      top: 18px;
+      left: 10px;
+      width: 1.5em;
+      text-align: center;
+      transition: transform $animation-small-time;
+    }
+  }
+  ul{
+    /* by default hide all sub menus */
+    display: none;
+    label,
+    a{
+      padding-left: 78px;
+      background: none;
+      background: $grey-darkest;
+    }
+    label i{
+      left: 44px;
+    }
+    ul{
+      label,
+      a{
+        padding-left: 102px;
+      }
+      label i{
+        left: 54px;
       }
     }
   }

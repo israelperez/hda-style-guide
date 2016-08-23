@@ -20,16 +20,32 @@
         <!-- Add your site or application content here -->
         <div class="site_container">
 
-          <nav class="site_container-menu">
-    				<h2 class="">Sidebar</h2>
-    				<ul>
-    					<li><a class="" href="#">Data Management</a></li>
-    					<li><a class="" href="#">Location</a></li>
-    					<li><a class="" href="#">Study</a></li>
-    					<li><a class="" href="#">Collections</a></li>
-    					<li><a class="" href="#">Credits</a></li>
-    				</ul>
-    			</nav>
+          <aside class="site_container-menu">
+            <img class="site_container-menu-logo" src="img/logo-hda.svg">
+            <nav>
+              <ul class="site_container-menu-nav accordion">
+                <li class="accordion_group">
+                  <input type="checkbox" name="group1" id="group1">
+                  <label for="group1"><i class="hda-icon_angle-right"></i>Group 1</label>
+                  <ul>
+                    <li class="accordion_group">
+                      <input type="checkbox" name="group1sub1" id="group1sub1">
+                      <label for="group1sub1"><i class="hda-icon_angle-right"></i>Sub Group 1</label>
+                      <ul>
+                        <li><a href="#">item 1</a></li>
+                        <li><a href="#">item 2</a></li>
+                        <li><a href="#">item 3</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">item 2</a></li>
+                    <li><a href="#">item 3</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">item 2</a></li>
+                <li><a href="#">item 3</a></li>
+              </ul>
+            </nav>
+    			</aside>
 
           <!-- content push wrapper -->
           <div class="site_container-pusher">
