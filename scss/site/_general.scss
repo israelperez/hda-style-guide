@@ -1,6 +1,9 @@
 html, body, .site_container, .site_container-pusher {
   height: 100%;
 }
+body{
+  background-color: $grey-darker;
+}
 // shell based on code by Codrops
 // http://tympanus.net/codrops/2013/08/28/transitions-for-off-canvas-navigations/
 .site{
@@ -75,7 +78,7 @@ html, body, .site_container, .site_container-pusher {
       &-content {
         height: 100%;
         overflow-y: scroll;
-        background: #f3efe0;
+        background: $body-bg-colour;
         position: relative;
         &-inner {
           position: relative;
