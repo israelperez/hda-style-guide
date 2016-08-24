@@ -6,9 +6,10 @@ var UIEngine = {
 
   _elements:{
     windowObj: $(window),
+    site: $('body'),
     siteContainer: $('.site_container'),
     menuButton: $('.site_container-menu-button'),
-    menuItems: $('.site_container-menu-nav ul a'),
+    menuItems: $('.site_container-menu-nav a'),
     menuGroupBtns: $('.site_container-menu-nav input'),
     siteContent: $('.site_container-pusher')
   },
@@ -21,27 +22,25 @@ var UIEngine = {
       e.stopPropagation();
       e.preventDefault();
 
-      // Side bar listeners
-      UIEngine._elements.siteContainer.addClass('site_menu-effect-9');
       setTimeout( function() {
-        UIEngine._elements.siteContainer.addClass('site_container-menu__is-open');
+        UIEngine._elements.siteContainer.toggleClass('site_container-menu__is-open');
       }, 25 );
-      UIEngine._elements.siteContent.one('touchstart click', function() {
-        UIEngine._closeNav();
-      });
-      UIEngine._elements.menuItems.one('touchstart click', function() {
-        // TODO: load content
-        UIEngine._closeNav();
-      });
-      UIEngine._elements.menuGroupBtns.on('change', function(){
-        var input = $(this);
-        if(input.prop('checked')){
-          input.siblings('ul').slideDown(UIEngine._animationSmallTime);
-        }else{
-          input.siblings('ul').slideUp(UIEngine._animationSmallTime);
-        }
-      });
-
+    });
+    UIEngine._elements.site.on('touchstart click', function(e) {
+      console.log(e.target, $(e.target).is('.site_container, .site_container-pusher'));
+      if($(e.target).is('.site_container, .site_container-pusher')) {UIEngine._closeNav();}
+    });
+    UIEngine._elements.menuItems.one('touchstart click', function() {
+      // TODO: load content
+      UIEngine._closeNav();
+    });
+    UIEngine._elements.menuGroupBtns.on('change', function(){
+      var input = $(this);
+      if(input.prop('checked')){
+        input.siblings('ul').slideDown(UIEngine._animationSmallTime);
+      }else{
+        input.siblings('ul').slideUp(UIEngine._animationSmallTime);
+      }
     });
   },
   _closeNav: function() {
