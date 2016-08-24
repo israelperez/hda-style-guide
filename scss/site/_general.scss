@@ -8,6 +8,7 @@ body{
 // http://tympanus.net/codrops/2013/08/28/transitions-for-off-canvas-navigations/
 .site{
   &_container {
+    @extend .site_menu-effect-9;
     position: relative;
     overflow: hidden;
     &-menu {
@@ -18,12 +19,11 @@ body{
       top: 0;
       left: 0;
       z-index: $zindex-navbar;
-      visibility: hidden;
+      opacity: 0;
       width: 300px;
       height: 100%;
       background: $body-bg-colour;
-      -webkit-transition: all 0.5s;
-      transition: all 0.5s;
+      transition: all $animation-small-time ease-in;
       &::after {
         position: absolute;
         top: 0;
@@ -52,9 +52,20 @@ body{
           transition: opacity 0.5s;
         }
       }
+      &-button{
+        @extend .icon;
+        @extend .hda-icon_menu;
+        position: fixed;
+        padding: 10px;
+        background: rgba(255,255,255,0.5);
+        top: $general-spacing;
+        left: 10px;
+        z-index: 1000;
+      }
       &-logo{
         height: 30px;
-        margin: $general-spacing;
+        margin: $general-spacing auto;
+        display: block;
       }
     }
     &-pusher {
@@ -83,8 +94,30 @@ body{
         position: relative;
         &-inner {
           position: relative;
+          padding-top: 80px;
         }
       }
+    }
+  }
+}
+.content{
+  &_header{
+    padding: $general-spacing;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255,255,255,0.85);
+    &-logo{
+      height: 40px;
+    }
+  }
+  &_main{
+    &-hero{
+      height: 300px;
+      background: url('../img/branding.jpg') center;
+      background-size: cover;
     }
   }
 }
