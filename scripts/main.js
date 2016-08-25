@@ -8,7 +8,7 @@ var UIEngine = {
     windowObj: $(window),
     site: $('body'),
     siteContainer: $('.site_container'),
-    menuButton: $('.site_container-menu-button'),
+    menuButton: $('.menu-button'),
     menuItems: $('.site_container-menu-nav a'),
     menuGroupBtns: $('.site_container-menu-nav input'),
     siteContent: $('.site_container-pusher')
