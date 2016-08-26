@@ -14,7 +14,7 @@
 			position: relative;
 			@extend .hda-icon_circle-warning;
 			&:before{
-				@extend .icon;
+				@extend .#{$icon-prefix};
 				position: absolute;
 				top: 0;
 				left: 0;
