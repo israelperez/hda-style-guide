@@ -11,7 +11,8 @@ var UIEngine = {
     menuButton: $('.menu-button'),
     menuItems: $('.site_container-menu-nav a'),
     menuGroupBtns: $('.site_container-menu-nav input'),
-    siteContent: $('.site_container-pusher')
+    siteContent: $('.site_container-pusher-content'),
+    views: $('.content_main-view')
   },
   _animationSmallTime: 500,
   eventtype: null,
@@ -26,21 +27,51 @@ var UIEngine = {
         UIEngine._elements.siteContainer.toggleClass('site_container-menu__is-open');
       }, 25 );
     });
-    UIEngine._elements.site.on('touchstart click', function(e) {
-      console.log(e.target, $(e.target).is('.site_container, .site_container-pusher'));
+    this._elements.site.on('touchstart click', function(e) {
       if($(e.target).is('.site_container, .site_container-pusher')) {UIEngine._closeNav();}
     });
-    UIEngine._elements.menuItems.one('touchstart click', function() {
-      // TODO: load content
+    this._elements.menuItems.on('touchstart click', function(e) {
+      var clickedLink = $(e.target),
+        targetPage = clickedLink.attr('data-page') + '.html',
+        scrollTo = clickedLink.attr('href');
+
+      e.stopPropagation();
+      e.preventDefault();
+
+      UIEngine._loadPage(targetPage, scrollTo);
       UIEngine._closeNav();
     });
-    UIEngine._elements.menuGroupBtns.on('change', function(){
+    this._elements.menuGroupBtns.on('change', function(){
       var input = $(this);
       if(input.prop('checked')){
         input.siblings('ul').slideDown(UIEngine._animationSmallTime);
       }else{
         input.siblings('ul').slideUp(UIEngine._animationSmallTime);
       }
+    });
+    UIEngine._elements.siteContent.on('touchstart click', '.content_main-nav-back, .content_main-nav-next', function(e){
+      var clickedLink = $(e.target),
+        targetPage = clickedLink.attr('data-page') + '.html',
+        scrollTo = clickedLink.attr('href');
+
+      e.stopPropagation();
+      e.preventDefault();
+      UIEngine._loadPage(targetPage, scrollTo);
+    });
+  },
+  _loadPage:function(pageToLoad, bookmark){
+    if (pageToLoad === null || pageToLoad === undefined ) { return; }
+    if (bookmark === null || bookmark === undefined ) { bookmark = '#'; }
+
+    //start throbber
+    UIEngine._elements.views.load('views/'+pageToLoad, function(){
+      // stop trobber
+      var scrollPos = 0;
+      console.log(bookmark);
+      if(bookmark !== '#'){
+        scrollPos = $(bookmark).offset().top;
+      }
+      UIEngine._elements.siteContent.animate({ scrollTop: scrollPos}, 1000);
     });
   },
   _closeNav: function() {
@@ -55,6 +86,7 @@ var UIEngine = {
     }else{
       this.eventtype = 'click';
     }
+    UIEngine._elements.views.load('views/intro.html');
   },
   checkIsMobile: function() {
 		var check = false;
