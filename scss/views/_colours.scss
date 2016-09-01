@@ -1,0 +1,133 @@
+.page_colours{
+  &-list{
+    @extend .grid-row;
+    list-style-type: none;
+    padding: 0;
+    > li{
+      @extend .grid-mobile_col-6;
+      @extend .grid-tablet_col-4;
+      @extend .grid-desktop_col-3;
+      min-height: 386px;
+    }
+    %preview{
+      height: $general-spacing * 4;
+      margin-bottom: $general-spacing;
+    }
+    &-preview{
+      &__teal{
+        &-deep{
+          @extend %preview;
+          background: $hda-teal-deep;
+        }
+        &-grey{
+          @extend %preview;
+          background: $hda-teal-grey;
+        }
+        &-grey-light{
+          @extend %preview;
+          background: $hda-teal-grey-light;
+        }
+        &-grey-lighter{
+          @extend %preview;
+          background: $hda-teal-grey-lighter;
+        }
+        &-grey-lightest{
+          @extend %preview;
+          background: $hda-teal-grey-lightest;
+        }
+      }
+      &__red{
+        @extend %preview;
+        background: $hda-red;
+      }
+      &__orange{
+        @extend %preview;
+        background: $hda-orange;
+      }
+      &__yellow{
+        @extend %preview;
+        background: $hda-yellow;
+      }
+      &__green{
+        @extend %preview;
+        background: $hda-green;
+      }
+      &__grey{
+        @extend %preview;
+        background: $hda-grey;
+        &-light{
+          @extend %preview;
+          background: $hda-grey-light;
+        }
+        &-lighter{
+          @extend %preview;
+          background: $hda-grey-lighter;
+        }
+        &-lightest{
+          @extend %preview;
+          background: $hda-grey-lightest;
+        }
+        &-dark{
+          @extend %preview;
+          background: $hda-grey-dark;
+        }
+        &-darker{
+          @extend %preview;
+          background: $hda-grey-darker;
+        }
+        &-darkest{
+          @extend %preview;
+          background: $hda-grey-darkest;
+        }
+      }
+    }
+    &-values{
+      list-style-type: none;
+      padding: 0;
+      font-size: 12px;
+      li{
+        @extend .grid-tablet_col-6;
+        margin-bottom: $general-spacing;
+        span{
+          display: block;
+        }
+      }
+    }
+  }
+  &-usage{
+    %useage{
+      height: $general-spacing;
+      display: inline-block;
+    }
+    &-teal{
+      @extend %useage;
+      background: $hda-teal-deep;
+      width: 40%;
+    }
+    &-yellow{
+      @extend %useage;
+      background: $hda-yellow;
+      width: 40%;
+    }
+    &-red{
+      @extend %useage;
+      background: $hda-red;
+      width: 8%;
+    }
+    &-green{
+      @extend %useage;
+      background: $hda-green;
+      width: 8%;
+    }
+    &-orange{
+      @extend %useage;
+      background: $hda-orange;
+      width: 4%;
+    }
+  }
+}
+@include media-breakpoint-up(tablet) {
+  .page_colours-list > li{
+    min-height: 275px;
+  }
+}
