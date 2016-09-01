@@ -1,9 +1,9 @@
 .cont{
 	pre{
 		padding: 10px;
-		background: $grey-darkest;
+		background: $hda-grey-darkest;
 		font-size: 0.8em;
-		color: $grey-light;
+		color: $hda-grey-light;
 		margin-bottom: $general-spacing;
 		.tag{
 			color: #e06c6e;
@@ -54,13 +54,13 @@
 			padding-top: $table-cell-padding;
 		    padding-bottom: $table-cell-padding;
 			font-weight: $font-weight-strong;
-			border-bottom: 2px solid $grey;
+			border-bottom: 2px solid $hda-grey;
 		}
 		tbody tr{
-			border-bottom: 1px solid $grey-light;
+			border-bottom: 1px solid $hda-grey-light;
 		}
 		tfoot{
-			background: $grey-lightest;
+			background: $hda-grey-lightest;
 		}
 		td{
 			padding-top: $table-cell-padding;
@@ -143,7 +143,7 @@
 			}
 		}
 		&-quote{
-			background: $grey-lightest;
+			background: $hda-grey-lightest;
 			border-left: 10px solid $brand-secondary;
 			margin: 1.5em 0;
 			padding: 0.5em 10px;
@@ -164,7 +164,7 @@
 			}
 		}
 		&-fake-table{
-			background-color: $grey-lighter;
+			background-color: $hda-grey-lighter;
 			margin-bottom: $general-spacing;
 			h1,
 			h2,
@@ -279,7 +279,7 @@
 				border: 3px double $brand-primary;
 			}
 			.cont_layout-col-x-small{
-				border: 1px solid $grey-lighter !important;
+				border: 1px solid $hda-grey-lighter !important;
 			}
 		}
 	}

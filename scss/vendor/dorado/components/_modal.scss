@@ -16,7 +16,7 @@
 		&-footer{
 			padding: #{$general-spacing * 0.75} $general-spacing;
 			text-align: right;
-			background-color: $grey-light;
+			background-color: $hda-grey-light;
 			button{
 				@extend .hda-button;
 				&[class*='-action']{
@@ -27,7 +27,7 @@
 	}
 }
 
-@include media-breakpoint-up(tablet){
+@include media-breakpoint-up(tablet) {
 	.hda-modal{
 		&_screen{
 			display: block;
@@ -44,7 +44,7 @@
 			top: 50%;
 			left: 50%;
 			width: 550px;
-			max-height: 750px;
+			max-height: calc(100% - 40px);
 			overflow-y: scroll;
 			transform: translate(-50%, -50%);
 			background: white;

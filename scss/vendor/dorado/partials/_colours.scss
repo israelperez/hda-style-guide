@@ -7,22 +7,22 @@ $hda-orange:				#f2896f;
 $hda-yellow:				#f5b672;
 $hda-green:					#009f96;
 
-$teal-grey:				#577581;
-$teal-grey-light:		#79919b;
-//$teal-grey-lgiht2:		#a5b5bd;
-$teal-grey-lighter:		#d2dadd;
-$teal-grey-lightest:	#e8ecee;
+$hda-teal-grey:				#577581;
+$hda-teal-grey-light:		#79919b;
+//$hda-teal-grey-lgiht2:		#a5b5bd;
+$hda-teal-grey-lighter:		#d2dadd;
+$hda-teal-grey-lightest:	#e8ecee;
 
 $had-yellow-grey:		#f5c99a;
 
-$grey-lightest:		#f7f7f7;
-$grey-lighter:		#eaeaea;
-$grey-light:		#dadada;
-$grey:				#bfbfbf;
-$grey-dark:			#999;
-$grey-darker:		#666;
-$grey-darkest:		#333;
-//$grey-darkest2:	#1a1a1a;
+$hda-grey-lightest:		#f7f7f7;
+$hda-grey-lighter:		#eaeaea;
+$hda-grey-light:		#dadada;
+$hda-grey:				#bfbfbf;
+$hda-grey-dark:			#999;
+$hda-grey-darker:		#666;
+$hda-grey-darkest:		#333;
+//$hda-grey-darkest2:	#1a1a1a;
 
 $peter-river:		#3498db;
 $turquoise:			#1abc9c;
@@ -62,7 +62,7 @@ $brand-danger:              $hda-red;
 
 // Themes
 $theme-teal-primary:			$hda-teal-deep;
-$theme-teal-secondary:			$teal-grey;
+$theme-teal-secondary:			$hda-teal-grey;
 $theme-teal-text-on-primary:	white;
 $theme-green-primary:			$hda-green;
 $theme-green-secondary:			#47b6af;
@@ -80,24 +80,24 @@ $theme-yellow-text-on-primary:	$hda-teal-deep;
 // General
 //
 $focus-colour:		$hda-green !default;
-$border-colour:		$grey-light !default;
+$border-colour:		$hda-grey-light !default;
 
 // Body
 //
 $body-bg-colour:			white !default; // used in reboot
-$body-text-colour:			$grey-darkest !default; // used in reboot (old name $body-colour)
+$body-text-colour:			$hda-grey-darkest !default; // used in reboot (old name $body-colour)
 $font-heading-colour:		$brand-primary; // used in reboot
 $abbr-border-colour: 		$border-colour !default; // used in reboot
-$text-muted: 				$grey-dark !default; // used in reboot
+$text-muted: 				$hda-grey-dark !default; // used in reboot
 $text-colour-on-dark:		white;
-$text-colour-on-light:  $grey-darkest;
+$text-colour-on-light:  $hda-grey-darkest;
 
 // Links
 //
 // Style anchor elements.
 $link-colour:           $brand-primary !default; // used in reboot
 $link-decoration:		underline !default; // used in reboot
-$link-hover-colour:     $teal-grey-light; //darken($link-colour, 15%) !default; // used in reboot
+$link-hover-colour:     $hda-teal-grey-light; //darken($link-colour, 15%) !default; // used in reboot
 $link-hover-decoration: underline !default; // used in reboot
 
 // Nav
@@ -120,11 +120,11 @@ $table-bg:                      transparent !default; // used in reboot
 // Dropdown menu container and contents.
 $dropdown-bg-colour:			white !default;
 $dropdown-border-colour:		$border-colour !default;
-$dropdown-link-colour:			$grey-darkest !default;
-$dropdown-link-hover-colour:	$grey-darkest !default;
-$dropdown-link-hover-bg-colour:	$grey-lightest !default;
+$dropdown-link-colour:			$hda-grey-darkest !default;
+$dropdown-link-hover-colour:	$hda-grey-darkest !default;
+$dropdown-link-hover-bg-colour:	$hda-grey-lightest !default;
 
 // Form controls
 //
-$form-control-bg-color:			$grey-light;
+$form-control-bg-color:			$hda-grey-light;
 $form-control-select-bg-color:	$brand-secondary;

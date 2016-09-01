@@ -1,5 +1,5 @@
 .hda-foot{
-	background-color: $grey-darker;
+	background-color: $hda-grey-darker;
 	font-size: 0.875rem;
 	padding: 20px 0;
 	a{
@@ -41,7 +41,7 @@
 			@extend .social-icon__is-footer;
 			&:hover{
 				text-decoration: none;
-				color: $grey !important;
+				color: $hda-grey !important;
 			}
 			&:focus{
 				text-decoration: none;

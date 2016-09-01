@@ -3,7 +3,7 @@
 	width: 100%;
 	&__is-full-width{
 		padding: $general-spacing 0 0;
-		background-color: $grey-lighter;
+		background-color: $hda-grey-lighter;
 	}
 	&_item{
 		display: table-cell;
@@ -12,10 +12,10 @@
 		vertical-align: middle;
 		padding: 10px;
 		cursor: pointer;
-		background-color: $grey-lightest;
-		border-bottom: 1px solid $grey-light;
+		background-color: $hda-grey-lightest;
+		border-bottom: 1px solid $hda-grey-light;
 		&[aria-selected="true"]{
-			border: 1px solid $grey-light;
+			border: 1px solid $hda-grey-light;
 			border-top: 7px solid $brand-secondary;
 			background-color: white;
 			border-bottom-color: white;
@@ -24,15 +24,15 @@
 			}
 		}
 		&:hover{
-			background-color: $grey-lighter;
+			background-color: $hda-grey-lighter;
 		}
 		&__is-full-width{
-			background-color: $grey-light;
-			border-right: 1px solid $grey-lighter;
-			border-left: 1px solid $grey-lighter;
+			background-color: $hda-grey-light;
+			border-right: 1px solid $hda-grey-lighter;
+			border-left: 1px solid $hda-grey-lighter;
 			border-top: none;
 			&:hover{
-				background-color: $grey;
+				background-color: $hda-grey;
 			}
 			&[aria-selected="true"]{
 				background-color: white;

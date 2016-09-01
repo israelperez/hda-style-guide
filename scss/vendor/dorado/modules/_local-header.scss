@@ -94,7 +94,7 @@
 						padding: 5px 20px;
 					}
 					.active{
-						background-color: $grey-lightest;
+						background-color: $hda-grey-lightest;
 					}
 				}
 			}
@@ -111,7 +111,7 @@
 						position: relative;
 						padding: 0;
 						width: 20%;
-						border-left: 1px solid $grey;
+						border-left: 1px solid $hda-grey;
 						&:first-child{
 							border: none;
 						}
@@ -151,7 +151,7 @@
 						font-size: 0.875rem;
 						width: 625px;
 						padding: 40px;
-						background: $grey-darker;
+						background: $hda-grey-darker;
 						box-shadow: $paper-depth1;
 						&-item{
 							border-bottom: 1px solid white;
@@ -162,7 +162,7 @@
 								color: white;
 								display: inline-block;
 								padding-right: 8px;
-								border-right: 1px solid $grey-dark;
+								border-right: 1px solid $hda-grey-dark;
 								margin-right: 8px;
 								line-height: 1rem;
 								&:last-child{
@@ -232,7 +232,7 @@
 		overflow-y: auto;
 		header{
 			padding: 6px 20px;
-			background-color: $grey-light;
+			background-color: $hda-grey-light;
 		}
 		&-btn-close{
 			position: absolute;
@@ -248,7 +248,7 @@
 		}
 		&-lvl-1{
 			li{
-				border-bottom: 1px solid $grey-light;
+				border-bottom: 1px solid $hda-grey-light;
 			}
 			a{
 				display: block;
@@ -264,7 +264,7 @@
 			}
 			a{
 				padding-left: 40px;
-				background-color: $grey-lighter;
+				background-color: $hda-grey-lighter;
 			}
 		}
 		&-icon{
@@ -416,7 +416,7 @@
 		&-level-1-item{
 			width: 1%;
 			&:first-child{
-				border-left: 1px solid $grey;
+				border-left: 1px solid $hda-grey;
 			}
 			&:last-child{
 				width: auto; // IE fix

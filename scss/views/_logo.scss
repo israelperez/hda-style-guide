@@ -29,7 +29,7 @@
       &-icon{
         @extend .hda-icon_download;
         @extend .#{$icon-prefix}__fixed-width;
-        border: 1px solid $grey-darker;
+        border: 1px solid $hda-grey-darker;
         border-radius: 50%;
         padding: 5px;
         width: 25px;
@@ -57,7 +57,7 @@
       img{
         min-height: 180px;
         width: 180px;
-        border: 1px solid $grey-light;
+        border: 1px solid $hda-grey-light;
         padding: $general-spacing;
         margin-bottom: 10px;
       }
@@ -74,7 +74,7 @@
         border-color: $text-colour-on-dark;
       }
       img{
-        background-color: $grey-darker;
+        background-color: $hda-grey-darker;
       }
     }
   }
