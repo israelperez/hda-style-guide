@@ -84,19 +84,19 @@ $border-colour:		$hda-grey-light !default;
 
 // Body
 //
-$body-bg-colour:			white !default; // used in reboot
-$body-text-colour:			$hda-grey-darkest !default; // used in reboot (old name $body-colour)
-$font-heading-colour:		$brand-primary; // used in reboot
-$abbr-border-colour: 		$border-colour !default; // used in reboot
-$text-muted: 				$hda-grey-dark !default; // used in reboot
-$text-colour-on-dark:		white;
+$body-bg-colour:        white !default; // used in reboot
+$body-text-colour:      $hda-grey-darkest !default; // used in reboot (old name $body-colour)
+$font-heading-colour:   $brand-primary; // used in reboot
+$abbr-border-colour:    $border-colour !default; // used in reboot
+$text-muted:            $hda-grey-dark !default; // used in reboot
+$text-colour-on-dark:   white;
 $text-colour-on-light:  $hda-grey-darkest;
 
 // Links
 //
 // Style anchor elements.
 $link-colour:           $brand-primary !default; // used in reboot
-$link-decoration:		underline !default; // used in reboot
+$link-decoration:       underline !default; // used in reboot
 $link-hover-colour:     $hda-teal-grey-light; //darken($link-colour, 15%) !default; // used in reboot
 $link-hover-decoration: underline !default; // used in reboot
 

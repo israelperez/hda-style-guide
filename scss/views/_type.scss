@@ -1,0 +1,163 @@
+.page_type{
+  .grid-row{
+    margin-bottom: $general-spacing;
+  }
+  &-tile{
+    @extend .grid-mobile_col-12;
+    @extend .grid-tablet_col-4;
+    &-download{
+      @extend .hda-tile-small;
+      @extend .remove-link;
+      display: inline-block;
+      padding: $general-spacing;
+      &-icon{
+        @extend .hda-tile-small-left;
+        @extend .hda-icon_download;
+      }
+      &-info{
+        @extend .hda-tile-small-right;
+        p{
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  &-demo{
+    &-text{
+      @extend .grid-row;
+      border: 1px solid $border-colour;
+      &-preview{
+        @extend .grid-mobile_col-12;
+        @extend .grid-tablet_col-3;
+        font-size: 60px;
+        text-align: center;
+      }
+      &-font{
+        @extend .grid-mobile_col-12;
+        @extend .grid-tablet_col-5;
+        margin-bottom: $general-spacing;
+      }
+      &-info{
+        @extend .grid-mobile_col-12;
+        @extend .grid-tablet_col-4;
+        margin-bottom: $general-spacing;
+        p{
+          margin-bottom: 0;
+        }
+        ul{
+          padding: 0;
+          list-style-type: none;
+          margin-bottom: 0;
+        }
+      }
+      &__bold{
+        @extend .grid-row;
+        border: 1px solid $border-colour;
+        font-weight: $font-weight-strong;
+        .page_type-demo-text-info{
+          font-weight: $font-weight-root;
+          p{
+            margin-bottom: 0;
+          }
+          ul{
+            padding: 0;
+            list-style-type: none;
+          }
+        }
+      }
+    }
+    &-styles{
+      @extend .grid-row;
+      border: 1px solid $border-colour;
+      &-info{
+        @extend .grid-mobile_col-12;
+        @extend .grid-tablet_col-4;
+        margin-bottom: $general-spacing;
+        p{
+          margin-bottom: 0;
+        }
+        ul{
+          padding: 0;
+          list-style-type: none;
+          margin-bottom: .5rem;
+        }
+      }
+      &-preview{
+        @extend .grid-mobile_col-12;
+        @extend .grid-tablet_col-4;
+        margin-bottom: $general-spacing;
+        padding-top: $general-spacing;
+        padding-bottom: $general-spacing;
+        %headings{
+          color: $font-heading-colour;
+          letter-spacing: -1px;
+          line-height: $line-height-headings;
+          margin-bottom: 20px;
+        }
+        &-h1{
+          @extend %headings;
+          font-size: $font-size-base * pow($heading-device-factor, 4);
+          font-weight: $font-weight-heading;;
+          &__desktop{
+            @extend %headings;
+            font-size: $font-size-base * pow($heading-desktop-factor, 4);
+            font-weight: $font-weight-heading;;
+          }
+        }
+        &-h2{
+          @extend %headings;
+          font-size: $font-size-base * pow($heading-device-factor, 3);
+          font-weight: $font-weight-heading;;
+          &__desktop{
+            @extend %headings;
+            font-size: $font-size-base * pow($heading-desktop-factor, 3);
+            font-weight: $font-weight-heading;;
+          }
+        }
+        &-h3{
+          @extend %headings;
+          font-size: $font-size-base * pow($heading-device-factor, 2);
+          font-weight: $font-weight-heading;;
+          &__desktop{
+            @extend %headings;
+            font-size: $font-size-base * pow($heading-desktop-factor, 2);
+            font-weight: $font-weight-heading;
+          }
+        }
+        &-h4{
+          @extend %headings;
+          font-size: $font-size-base * $heading-device-factor;
+          font-weight: $font-weight-heading-small;
+          &__desktop{
+            @extend %headings;
+            font-size: $font-size-base * $heading-desktop-factor;
+            font-weight: $font-weight-heading-small;
+          }
+        }
+        &-h5{
+          @extend %headings;
+          font-size: $font-size-base;
+          font-weight: $font-weight-heading-small;
+          &__desktop{
+            @extend %headings;
+            font-size: $font-size-base;
+            font-weight: $font-weight-heading-small;
+          }
+        }
+        &-h6{
+          @extend %headings;
+          font-size: $font-size-base / $heading-device-factor;
+          font-weight: $font-weight-heading-small;
+          &__desktop{
+            @extend %headings;
+            font-size: $font-size-base / $heading-desktop-factor;
+            font-weight: $font-weight-heading-small;
+          }
+        }
+      }
+    }
+  }
+}
+@include media-breakpoint-up(tablet) {
+
+}

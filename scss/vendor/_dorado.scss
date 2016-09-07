@@ -2,8 +2,8 @@
 
 // Partials - Authored Dependencies
 @import "dorado/partials/variables";
-@import "dorado/partials/typography";
 @import "dorado/partials/colours";
+@import "dorado/partials/typography";
 @import "dorado/partials/mixins";
 @import "dorado/partials/mediaqueries";
 @import "dorado/partials/grid";
@@ -24,6 +24,7 @@
 @import "dorado/components/modal";
 @import "dorado/components/video-player";
 @import "dorado/components/accordion";
+@import "dorado/components/tile-small";
 
 // Modules - Sections
 @import "dorado/modules/universal-header"; // universal header

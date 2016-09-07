@@ -59,4 +59,12 @@ $font-weight-root:		400 !default; // used in reboot
 $font-weight-strong:	600 !default; // used in reboot
 $font-weight-heading:	400 !default; // used in reboot
 $font-weight-heading-small: 600 !default; // used in reboot
-$dt-font-weight:		300 !default; // used in reboot
+$dt-font-weight:			600 !default; // used in reboot
+
+kbd{
+	padding: 2px 4px;
+	color: $text-colour-on-dark;
+	background: $hda-grey-darkest;
+	border-radius: 3px;
+	display: inline-block;
+}
