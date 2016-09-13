@@ -15,6 +15,8 @@ var UIEngine = {
     views: $('.content_main-view')
   },
   _animationSmallTime: 500,
+  _loadedPage: null,
+  _transitionEvent: null,
   eventtype: null,
 
   // private funtions and methods
@@ -38,9 +40,13 @@ var UIEngine = {
       e.stopPropagation();
       e.preventDefault();
 
-      UIEngine._loadPage(targetPage, scrollTo);
       UIEngine._closeNav();
+
+      $('.site_container-pusher').one(UIEngine._transitionEvent, function(){
+        UIEngine._loadPage(targetPage, scrollTo);
+      });
     });
+
     this._elements.menuGroupBtns.on('change', function(){
       var input = $(this);
       if(input.prop('checked')){
@@ -59,20 +65,48 @@ var UIEngine = {
       UIEngine._loadPage(targetPage, scrollTo);
     });
   },
+  _whichTransitionEvent:function(){
+    var t,
+      el = document.createElement("fakeelement"),
+      transitions = {
+        "transition":       "transitionend",
+        "OTransition":      "oTransitionEnd",
+        "MozTransition":    "transitionend",
+        "WebkitTransition": "webkitTransitionEnd"
+      };
+
+    for (t in transitions){
+      if (el.style[t] !== undefined){
+        return transitions[t];
+      }
+    }
+  },
   _loadPage:function(pageToLoad, bookmark){
     if (pageToLoad === null || pageToLoad === undefined ) { return; }
     if (bookmark === null || bookmark === undefined ) { bookmark = '#'; }
+    var bookmarkPos = 0;
 
     //start throbber
-    UIEngine._elements.views.load('views/'+pageToLoad, function(){
-      // stop trobber
-      var scrollPos = 0;
-      console.log(bookmark);
+
+    if(UIEngine._loadedPage === pageToLoad){
       if(bookmark !== '#'){
-        scrollPos = $(bookmark).offset().top;
+        bookmarkPos = $(bookmark).position().top;
       }
-      UIEngine._elements.siteContent.animate({ scrollTop: scrollPos}, 1000);
-    });
+      UIEngine._scrollToPos(bookmarkPos);
+    }else{
+      UIEngine._elements.views.load('views/'+pageToLoad, function(){
+        // stop trobber
+        UIEngine._loadedPage = pageToLoad;
+
+        if(bookmark !== '#'){
+          bookmarkPos = $(bookmark).position().top;
+        }
+        UIEngine._scrollToPos(bookmarkPos);
+      });
+    }
+  },
+  _scrollToPos: function(scrollPos){
+    UIEngine._elements.siteContent.animate({ scrollTop: scrollPos - 80}, 1000);
   },
   _closeNav: function() {
     this._elements.siteContainer.removeClass('site_container-menu__is-open');
@@ -86,7 +120,9 @@ var UIEngine = {
     }else{
       this.eventtype = 'click';
     }
-    UIEngine._elements.views.load('views/intro.html');
+    this._transitionEvent = this._whichTransitionEvent();
+    //UIEngine._elements.views.load('views/intro.html');
+    this._loadPage('intro.html');
   },
   checkIsMobile: function() {
 		var check = false;
