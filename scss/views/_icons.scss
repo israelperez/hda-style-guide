@@ -1,0 +1,30 @@
+.page_icons{
+  .page_icon-demo{
+    max-width: 290px;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: $general-spacing * 2;
+    margin-right: $general-spacing * 2;
+    &-preview{
+      border-bottom: 1px solid $border-colour;
+      padding-bottom: 5px;
+      margin-bottom: 8px;
+      font-size: 24px;
+      i{
+        display: inline-block;
+        width: 106px;
+      }
+    }
+    &-code{
+      padding-left: 112px;
+      border-bottom: 1px solid $border-colour;
+      padding-bottom: 8px;
+      position: relative;
+      span{
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}

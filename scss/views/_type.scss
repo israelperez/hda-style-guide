@@ -154,6 +154,44 @@
             font-weight: $font-weight-heading-small;
           }
         }
+        &__single{
+          @extend .grid-mobile_col-12;
+          @extend .grid-tablet_col-8;
+          @extend .cont;
+          margin-bottom: $general-spacing;
+          padding-top: $general-spacing;
+          padding-bottom: $general-spacing;
+          &-link{
+            &-normal{
+              color: $link-colour;
+              text-decoration: $link-decoration;
+              cursor: pointer;
+            }
+            &-hover{
+              color: $link-hover-colour;
+              text-decoration: $link-hover-decoration;
+              cursor: pointer;
+            }
+            &-focus{
+              @include tab-focus();
+              color: $link-hover-colour;
+              text-decoration: $link-hover-decoration;
+              cursor: pointer;
+            }
+          }
+          &-quote{
+            @extend .cont_layout-quote;
+          }
+          &-standout{
+            @extend .cont_layout-standout;
+          }
+          &-action1{
+            @extend .cont_layout-standout_action1;
+          }
+          &-action2{
+            @extend .cont_layout-standout_action2;
+          }
+        }
       }
     }
   }

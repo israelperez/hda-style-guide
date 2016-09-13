@@ -46,26 +46,22 @@ i,
   left: 0;
   width: 100%;
   text-align: center;
+	line-height: 1em;
 }
 .#{$icon-prefix}__stack-1x { line-height: inherit; }
 .#{$icon-prefix}__stack-2x { font-size: 2em; }
 
 // animations ------------------------
 .#{$icon-prefix}__is-spin {
+	@extend .#{$icon-prefix}__fixed-width;
+	display: inline-block;
 	animation: icon-spin $animation-large-time infinite linear;
 }
 
 .#{$icon-prefix}__is-pulse {
+	@extend .#{$icon-prefix}__fixed-width;
+	display: inline-block;
 	animation: icon-spin $animation-large-time infinite steps(8);
-}
-
-@-webkit-keyframes icon-spin {
-  0% {
-	  transform: rotate(0deg);
-  }
-  100% {
-	  transform: rotate(359deg);
-  }
 }
 
 @keyframes icon-spin {
