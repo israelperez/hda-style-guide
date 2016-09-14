@@ -193,6 +193,9 @@
           }
         }
       }
+      &-table{
+        @extend .cont;
+      }
     }
   }
 }
