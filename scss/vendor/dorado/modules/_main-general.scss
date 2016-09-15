@@ -60,6 +60,25 @@
 					color: $brand-text-on-secondary;
 				}
 			}
+			&__qoute{
+				background: $hda-grey-lightest;
+				border-left: 10px solid $brand-secondary;
+				margin: 1.5em 0;
+				padding: 0.5em 10px;
+				quotes: "\201C""\201D""\2018""\2019";
+				&:before{
+					color: $brand-secondary;
+					content: open-quote;
+					font-size: 4em;
+					line-height: 0.1em;
+					margin-right: 0.25em;
+					vertical-align: -0.4em;
+				}
+			}
+			&__mute{
+				margin-top: $general-spacing * 2;
+				margin-bottom: $general-spacing * 2;
+			}
 		}
 		&-text{
 			font-size: 1rem;

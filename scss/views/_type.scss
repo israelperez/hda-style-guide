@@ -179,17 +179,22 @@
               cursor: pointer;
             }
           }
+          &-mute{
+            @extend .main_content-general-standout__mute;
+          }
           &-quote{
-            @extend .cont_layout-quote;
+            @extend .main_content-general-standout__qoute;
           }
           &-standout{
-            @extend .cont_layout-standout;
+            @extend .main_content-general-standout;
           }
           &-action1{
-            @extend .cont_layout-standout_action1;
+            @extend .main_content-general-standout;
+            @extend .main_content-general-standout__is-brand-primary;
           }
           &-action2{
-            @extend .cont_layout-standout_action2;
+            @extend .main_content-general-standout;
+            @extend .main_content-general-standout__is-brand-secondary;
           }
         }
       }
