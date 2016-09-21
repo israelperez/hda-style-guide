@@ -84,7 +84,7 @@
 		}
 	}
 	.list-links-icon{
-		@extend .hda-icon_arrow-right;
+		@extend .#{$icon-prefix}_arrow-right;
 	}
 	&-print{
 		@extend .print-only__block;

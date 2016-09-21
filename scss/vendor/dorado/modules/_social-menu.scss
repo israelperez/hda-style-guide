@@ -121,26 +121,26 @@
 	        text-decoration: none;
 	    }
 		&_facebook {
-		    @extend .hda-icon_facebook;
+		    @extend .#{$icon-prefix}_facebook;
 		}
 		&_twitter {
-		    @extend .hda-icon_twitter;
+		    @extend .#{$icon-prefix}_twitter;
 		}
 		&_google {
-		    @extend .hda-icon_google-plus;
+		    @extend .#{$icon-prefix}_google-plus;
 		}
 		&_pintrest {
-		    @extend .hda-icon_pinterest;
+		    @extend .#{$icon-prefix}_pinterest;
 		}
 		&_linkedin {
-		    @extend .hda-icon_linkedin;
+		    @extend .#{$icon-prefix}_linkedin;
 		}
 
 		&_email {
-		    @extend .hda-icon_envelope;
+		    @extend .#{$icon-prefix}_envelope;
 		}
 		&_print {
-		    @extend .hda-icon_printer;
+		    @extend .#{$icon-prefix}_printer;
 		}
 	}
 }

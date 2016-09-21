@@ -20,7 +20,7 @@
 			text-decoration: none;
 		}
 		&-icon{
-			@extend .hda-icon_mobile;
+			@extend .#{$icon-prefix}_mobile;
 			font-size: 36px;
 			line-height: 1rem;
 			position: relative;

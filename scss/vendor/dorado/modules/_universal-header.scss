@@ -66,10 +66,10 @@ $hda-uh-zindex:						1000; //standard nav bar is 1000
 }
 
 	.hda-uh_hda-logo-icon-m{
-		@extend .hda-icon_logo-small;
+		@extend .#{$icon-prefix}_logo-small;
 	}
 	.hda-uh_hda-logo-icon{
-		@extend .hda-icon_logo;
+		@extend .#{$icon-prefix}_logo;
 		position: relative;
 		display: inline-block;
 		width: 80px;

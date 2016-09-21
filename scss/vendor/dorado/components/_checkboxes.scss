@@ -40,12 +40,12 @@ label{
 				height: 1.5rem;
 				width: 1.5rem;
 				&[class$='__on']{
-					@extend .hda-icon_square-check;
+					@extend .#{$icon-prefix}_square-check;
 					color: $form-control-select-bg-color;
 					display: none;
 				}
 				&[class$='__off']{
-					@extend .hda-icon_square;
+					@extend .#{$icon-prefix}_square;
 					color: $form-control-bg-color;
 				}
 			}

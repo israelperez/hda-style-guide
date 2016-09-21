@@ -20,7 +20,7 @@
 			white-space: nowrap;
 		}
 		&-icon{
-			@extend .hda-icon_caret-down;
+			@extend .#{$icon-prefix}_caret-down;
 			position: absolute;
 			width: 36px;
 			right: 0;

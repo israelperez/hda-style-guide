@@ -34,10 +34,10 @@
 		white-space: nowrap;
 	}
 		&-thumbs-up{
-			@extend .hda-icon_thumbs-up;
+			@extend .#{$icon-prefix}_thumbs-up;
 		}
 		&-thumbs-down{
-			@extend .hda-icon_thumbs-down;
+			@extend .#{$icon-prefix}_thumbs-down;
 		}
 }
 

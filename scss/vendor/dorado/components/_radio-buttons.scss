@@ -35,12 +35,12 @@ label{
 				height: 1.5rem;
 				width: 1.5rem;
 				&[class$='__on']{
-					@extend .hda-icon_circle-check;
+					@extend .#{$icon-prefix}_circle-check;
 					color: $form-control-select-bg-color;
 					display: none;
 				}
 				&[class$='__off']{
-					@extend .hda-icon_circle;
+					@extend .#{$icon-prefix}_circle;
 					color: $form-control-bg-color;
 				}
 			}

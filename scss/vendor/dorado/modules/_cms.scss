@@ -27,7 +27,7 @@
 		list-style: none;
 		li{
 			position: relative;
-			@extend .hda-icon_circle;
+			@extend .#{$icon-prefix}_circle;
 			&:before{
 				@extend .#{$icon-prefix};
 				position: absolute;

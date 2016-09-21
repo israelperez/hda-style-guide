@@ -17,8 +17,8 @@
 						@extend .hda-text-input_group-text-field;
 						&-spinner{
 							@extend .hda-text-input_group-icon__back;
-							@extend .hda-icon_spinner;
-							@extend .hda-icon__is-spin;
+							@extend .#{$icon-prefix}_spinner;
+							@extend .#{$icon-prefix}__is-spin;
 							color: $brand-primary;
 							width: 1em;
 							height: 1em;
@@ -27,7 +27,7 @@
 						}
 						&-icon{
 							@extend .hda-text-input_group-icon__front;
-							@extend .hda-icon_location;
+							@extend .#{$icon-prefix}_location;
 						}
 						&-input{
 							@extend .hda-text-input_group-txt-input;

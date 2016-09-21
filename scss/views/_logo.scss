@@ -27,7 +27,7 @@
       opacity: 0.5;
       transition: all $animation-small-time;
       &-icon{
-        @extend .hda-icon_download;
+        @extend .#{$icon-prefix}_download;
         @extend .#{$icon-prefix}__fixed-width;
         border: 1px solid $hda-grey-darker;
         border-radius: 50%;

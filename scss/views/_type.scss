@@ -12,7 +12,7 @@
       padding: $general-spacing;
       &-icon{
         @extend .hda-tile-small-left;
-        @extend .hda-icon_download;
+        @extend .#{$icon-prefix}_download;
       }
       &-info{
         @extend .hda-tile-small-right;

@@ -37,10 +37,10 @@
 					text-align: center;
 				}
 				&__is-expanded{
-					@extend .hda-icon_caret-down;
+					@extend .#{$icon-prefix}_caret-down;
 				}
 				&__is-closed{
-					@extend .hda-icon_caret-right;
+					@extend .#{$icon-prefix}_caret-right;
 				}
 			}
 		}

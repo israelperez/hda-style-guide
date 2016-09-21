@@ -12,7 +12,7 @@
 		li{
 			padding-left: $general-spacing + 10;
 			position: relative;
-			@extend .hda-icon_circle-warning;
+			@extend .#{$icon-prefix}_circle-warning;
 			&:before{
 				@extend .#{$icon-prefix};
 				position: absolute;
