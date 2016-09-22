@@ -1,0 +1,12 @@
+.page_images{
+  figure{
+    img{
+      width: 100%;
+      box-shadow: $paper-depth2;
+      margin-bottom: $general-spacing / 2;
+    }
+    figcaption{
+      color: $text-muted;
+    }
+  }
+}
