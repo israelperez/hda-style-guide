@@ -20,6 +20,11 @@ var UIEngine = {
   eventtype: null,
 
   // private funtions and methods
+  _loadRoutes: function(){
+    $.routes.add('/home/',function(){
+      console.log('asdsa');
+    });
+  },
   _addListeners: function(){
     this._elements.menuButton.on('touchstart click', function(e){
       e.stopPropagation();
@@ -114,6 +119,7 @@ var UIEngine = {
 
   // public functions and methods
   init: function() {
+    this._loadRoutes();
     this._addListeners();
     if(this.checkIsMobile()){
       this.eventtype = 'touchstart';

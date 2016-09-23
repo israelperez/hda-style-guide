@@ -93,7 +93,7 @@ module.exports = function(grunt) {
           separator: '// concatenated' + grunt.util.linefeed,
           sourceMap: true
         },
-        src: ['scripts/vendor/jquery.js', 'scripts/vendor/bootstrap.js', 'scripts/*.js'],
+        src: ['scripts/vendor/jquery.js', 'scripts/vendor/jquery.routes.js', 'scripts/*.js'],
         dest: '<%= site.jsDist %>'
       },
       dist:{
