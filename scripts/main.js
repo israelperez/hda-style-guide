@@ -12,7 +12,8 @@ var UIEngine = {
     menuItems: $('.site_container-menu-nav a'),
     menuGroupBtns: $('.site_container-menu-nav input'),
     siteContent: $('.site_container-pusher-content'),
-    views: $('.content_main-view')
+    views: $('.content_main-view'),
+    throbber: $('.site-throbber')
   },
   _animationSmallTime: 500,
   _loadedPage: null,
@@ -70,6 +71,12 @@ var UIEngine = {
       UIEngine._loadPage(targetPage, scrollTo);
     });
   },
+  _showThrobber: function(){
+    this._elements.throbber.addClass('site-throbber__is-visible');
+  },
+  _hideThrobber: function(){
+    this._elements.throbber.removeClass('site-throbber__is-visible');
+  },
   _whichTransitionEvent:function(){
     var t,
       el = document.createElement("fakeelement"),
@@ -91,7 +98,6 @@ var UIEngine = {
     if (bookmark === null || bookmark === undefined ) { bookmark = '#'; }
     var bookmarkPos = 0;
 
-    //start throbber
 
     if(UIEngine._loadedPage === pageToLoad){
       if(bookmark !== '#'){
@@ -99,14 +105,25 @@ var UIEngine = {
       }
       UIEngine._scrollToPos(bookmarkPos);
     }else{
-      UIEngine._elements.views.load('views/'+pageToLoad, function(){
-        // stop trobber
-        UIEngine._loadedPage = pageToLoad;
-
-        if(bookmark !== '#'){
-          bookmarkPos = $(bookmark).position().top;
-        }
-        UIEngine._scrollToPos(bookmarkPos);
+      //start throbber
+      this._showThrobber();
+      //fadeout page
+      UIEngine._elements.views.animate({opacity: 0}, function(){
+        // once animation is finished load new content
+        UIEngine._elements.views.load('views/'+pageToLoad, function(){
+          // once content is loaded
+          // stop trobber
+          UIEngine._hideThrobber();
+          UIEngine._loadedPage = pageToLoad;
+          // animate in new content
+          UIEngine._elements.views.animate({opacity: 1}, function(){
+            //once new content is animated in, scroll to bookmark
+            if(bookmark !== '#'){
+              bookmarkPos = $(bookmark).position().top;
+            }
+            UIEngine._scrollToPos(bookmarkPos);
+          });
+        });
       });
     }
   },

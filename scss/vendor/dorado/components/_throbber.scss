@@ -5,7 +5,7 @@
 	left: 0;
 	width: 100%;
 	height: 3px;
-	background: $brand-accent;
+	background: $brand-secondary;
 	z-index: $z-index-throbber;
 	transition: top $animation-small-time;
 	border-bottom: 1px solid rgba(255,255,255,.3);
@@ -16,8 +16,9 @@
 		height: 3px;
 		width: 3px;
 		animation: slide 5s ease-in-out infinite;
-		background-color: white;
+		background-color: $brand-primary;
 		position: absolute;
+		top: 0;
 		&1{
 			@extend .site-throbber_loader;
 			animation-delay: 0.5s;
@@ -29,11 +30,11 @@
 	}
 }
 
-@-webkit-keyframes slide {
+@keyframes slide {
     from{
         left:-5px;
     }
     to{
-        left:100%;
+        left:calc(100% + 5px);
     }
 }
