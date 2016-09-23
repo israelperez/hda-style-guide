@@ -108,6 +108,7 @@ body{
     left: 0;
     background-color: rgba(255,255,255,0.85);
     z-index: $zindex-navbar;
+    box-shadow: $paper-depth2;
     &-logo{
       height: 40px;
     }
@@ -121,6 +122,19 @@ body{
     }
     &-view{
       @extend .grid-container;
+      section[class^='page_'] footer{
+        @extend .main_content-general-sub-section;
+      }
+    }
+    &-nav{
+      &-back, &-next{
+        @extend .hda-button;
+        @extend .hda-button__is-anchor;
+      }
+      &-next{
+        @extend .hda-button__accent;
+        float: right;
+      }
     }
   }
   section{
