@@ -12,6 +12,7 @@ var UIEngine = {
     menuItems: $('.site_container-menu-nav a'),
     menuGroupBtns: $('.site_container-menu-nav input'),
     siteContent: $('.site_container-pusher-content'),
+    mainContent: $('.content_main'),
     views: $('.content_main-view'),
     throbber: $('.site-throbber')
   },
@@ -108,27 +109,39 @@ var UIEngine = {
       //start throbber
       this._showThrobber();
       //fadeout page
-      UIEngine._elements.views.animate({opacity: 0}, function(){
+      UIEngine._elements.mainContent.animate({opacity: 0}, function(){
         // once animation is finished load new content
-        UIEngine._elements.views.load('views/'+pageToLoad, function(){
-          // once content is loaded
-          // stop trobber
-          UIEngine._hideThrobber();
-          UIEngine._loadedPage = pageToLoad;
-          // animate in new content
-          UIEngine._elements.views.animate({opacity: 1}, function(){
-            //once new content is animated in, scroll to bookmark
-            if(bookmark !== '#'){
-              bookmarkPos = $(bookmark).position().top;
-            }
-            UIEngine._scrollToPos(bookmarkPos);
+        // jump to top
+        UIEngine._scrollToPos(0, false, function(){
+          //load new content
+          UIEngine._elements.views.load('views/'+pageToLoad, function(){
+            // once content is loaded
+            // stop trobber
+            UIEngine._hideThrobber();
+            UIEngine._loadedPage = pageToLoad;
+            // animate in new content
+            UIEngine._elements.mainContent.animate({opacity: 1}, function(){
+              //once new content is animated in, scroll to bookmark
+              if(bookmark !== '#'){
+                bookmarkPos = $(bookmark).position().top;
+              }
+              UIEngine._scrollToPos(bookmarkPos);
+            });
           });
         });
       });
     }
   },
-  _scrollToPos: function(scrollPos){
-    UIEngine._elements.siteContent.animate({ scrollTop: scrollPos - 80}, 1000);
+  _scrollToPos: function(scrollPos, willAnimate, callBack){
+    var duration = 1000;
+    if(willAnimate === undefined){willAnimate = true;}
+
+    if(willAnimate){
+      duration = 1000;
+    }else{
+      duration = 0;
+    }
+    UIEngine._elements.siteContent.animate({ scrollTop: scrollPos - 80}, duration, callBack);
   },
   _closeNav: function() {
     this._elements.siteContainer.removeClass('site_container-menu__is-open');
