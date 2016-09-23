@@ -1,0 +1,56 @@
+.page_fonts{
+  .grid-row{
+    margin-bottom: $general-spacing;
+  }
+  &-tile{
+    @include download-tile();
+  }
+  &-demo{
+    &-text{
+      @extend .grid-row;
+      border: 1px solid $border-colour;
+      &-preview{
+        @extend .grid-mobile_col-12;
+        @extend .grid-tablet_col-3;
+        font-size: 60px;
+        text-align: center;
+      }
+      &-font{
+        @extend .grid-mobile_col-12;
+        @extend .grid-tablet_col-5;
+        margin-bottom: $general-spacing;
+      }
+      &-info{
+        @extend .grid-mobile_col-12;
+        @extend .grid-tablet_col-4;
+        margin-bottom: $general-spacing;
+        p{
+          margin-bottom: 0;
+        }
+        ul{
+          padding: 0;
+          list-style-type: none;
+          margin-bottom: 0;
+        }
+      }
+      &__bold{
+        @extend .grid-row;
+        border: 1px solid $border-colour;
+        font-weight: $font-weight-strong;
+        .page_type-demo-text-info{
+          font-weight: $font-weight-root;
+          p{
+            margin-bottom: 0;
+          }
+          ul{
+            padding: 0;
+            list-style-type: none;
+          }
+        }
+      }
+    }
+  }
+}
+@include media-breakpoint-up(tablet) {
+
+}

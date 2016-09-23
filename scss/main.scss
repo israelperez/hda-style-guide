@@ -1,11 +1,14 @@
 @import "vendor/dorado";
 
+@import "components/download-tile";
+
 @import "site/sidebareffects";
 @import "site/header";
 @import "site/general";
 
 @import "views/logo";
 @import "views/colours";
-@import "views/type";
+@import "views/fonts";
 @import "views/icons";
 @import "views/images";
+@import "views/content";

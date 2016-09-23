@@ -1,0 +1,20 @@
+@mixin download-tile() {
+  @extend .grid-mobile_col-12;
+  @extend .grid-tablet_col-4;
+  &-download{
+    @extend .hda-tile-small;
+    @extend .remove-link;
+    display: inline-block;
+    padding: $general-spacing;
+    &-icon{
+      @extend .hda-tile-small-left;
+      @extend .#{$icon-prefix}_download;
+    }
+    &-info{
+      @extend .hda-tile-small-right;
+      p{
+        margin-bottom: 0;
+      }
+    }
+  }
+}
